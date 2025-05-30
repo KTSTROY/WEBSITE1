@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="КТ СТРОЙ КОНСУЛТ ЕООД – Завършени проекти" />
+  <title>Завършени проекти | КТ СТРОЙ КОНСУЛТ</title>
+
+  <!-- Manifest & Main CSS -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Font: Inter -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+ <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    crossorigin="anonymous"
+  />
+
+  <style>
+    /* ———————————————
+       Root & Globals
+       ——————————————— */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --ff-base: 'Inter', sans-serif;
+      --fs-base: 16px;
+      --clr-primary: #f36f21;
+      --clr-dark: #222;
+      --clr-gray: #555;
+      --clr-light-bg: #fafafa;
+      --card-bg: #fff;
+      --border-radius: 8px;
+      --shadow-light: rgba(0,0,0,0.05);
+      --transition: 0.3s ease;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: var(--fs-base);
+    }
+
+    body {
+      font-family: var(--ff-base);
+      background-color: var(--clr-light-bg);
+      color: var(--clr-dark);
+      line-height: 1.6;
+      position: relative;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* ———————————————
+       NAVBAR
+       ——————————————— */
+    .navbar {
+      background: #000;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .container.menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .navbar li a {
+      color: #fff;
+      font-weight: 600;
+      transition: color var(--transition), border-bottom var(--transition);
+    }
+
+    .navbar li a:hover,
+    .navbar li a.active {
+      color: var(--clr-primary);
+      border-bottom: 2px solid var(--clr-primary);
+    }
+
+    .hamburger {
+      display: none;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      padding: 0.25rem 0.35rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    @media (max-width: 992px) {
+      .hamburger {
+        display: block;
+      }
+      .navbar .container.menu ul {
+        display: none;
+      }
+      .navbar .container.menu.active ul {
+        display: flex;
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 80%;
+        padding: 1rem;
+      }
+      .navbar .container.menu.active ul li + li {
+        margin-top: 1rem;
+      }
+      .navbar .container.menu.active ul li a {
+        color: #fff;
+        border: none;
+      }
+    }
+
+    /* ———————————————
+       CONTAINER & SECTION HEADING
+       ——————————————— */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+
+    h2.section-heading {
+      font-size: 1.75rem; /* 28px */
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+   /* h2.section-heading::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: var(--clr-primary);
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+*/
+
+    /* ———————————————
+       CONTAINER & SECTION HEADING
+       ——————————————— */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+
+    h2.section-heading {
+      font-size: 1.75rem; /* 28px */
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    /* h2.section-heading::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: var(--clr-primary);
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    } */
+
+    /* ———————————————
+       PROJECT GRID
+       ——————————————— */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    /* ———————————————
+       PROJECT CARD
+       ——————————————— */
+    a.project-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 12px var(--shadow-light);
+      overflow: hidden;
+      position: relative;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    a.project-card:hover,
+    a.project-card:focus {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px var(--shadow-light);
+    }
+    /* overlay */
+    a.project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0);
+      transition: background var(--transition);
+      z-index: 1;
+    }
+    a.project-card:hover::before,
+    a.project-card:focus::before {
+      background: rgba(0, 0, 0, 0.2);
+    }
+    a.project-card img,
+    a.project-card .project-info {
+      position: relative;
+      z-index: 2;
+    }
+    a.project-card img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      transition: transform var(--transition);
+    }
+    a.project-card:hover img,
+    a.project-card:focus img {
+      transform: scale(1.05);
+    }
+    .project-info {
+      padding: 1rem 1.25rem;
+      flex: 1;
+      text-align: left;
+    }
+    .project-info h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .project-info .meta {
+      font-size: 0.9rem;
+      color: var(--clr-gray);
+    }
+    .project-info .meta .label {
+      font-weight: 500;
+      color: var(--clr-primary);
+    }
+
+    /* ———————————————
+       BACK TO TOP BUTTON
+       ——————————————— */
+    #back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--clr-primary);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.5rem;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      z-index: 1002;
+    }
+
+    /* ———————————————
+       FOOTER (социална икона)
+       ——————————————— */
+    .footer-social a i {
+      color: #fff !important;
+    }
+
+    /* ———————————————
+       Scroll animations (Intersection Observer)
+       ——————————————— */
+    .project-card {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.3s ease, transform 1.3s ease !important;
+    }
+    .project-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Главна навигация">
+      <div class="container menu">
+        <button class="hamburger" aria-label="Меню"><i class="fas fa-bars"></i></button>
+        <ul>
+          <li><a href="index.html#home">Начало</a></li>
+          <li><a href="index.html#services">Услуги</a></li>
+          <li><a href="index.html#projects" class="active">Проекти</a></li>
+          <li><a href="index.html#about">За нас</a></li>
+          <li><a href="index.html#why-choose-us">Защо да изберете нас</a></li>
+          <li><a href="index.html#partners">Партньори</a></li>
+          <li><a href="index.html#clients">Клиенти</a></li>
+          <li><a href="index.html#contact">Контакт</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <h2 class="section-heading">Завършени проекти</h2>
+    <div class="projects-grid" id="completedGallery">
+      <!-- JS ще зареди проектните карти -->
+    </div>
+  </main>
+
+  <!-- BACK TO TOP -->
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer id="footer-contacts">
+    <div class="footer-container">
+      <h3>Контакти</h3>
+      <p><i class="fas fa-phone"></i><a href="tel:+359883481292">+359 883 481 292</a></p>
+      <p><i class="fas fa-envelope"></i><a href="mailto:office@ktstroyconsult.com">office@ktstroyconsult.com</a></p>
+      <p><i class="fas fa-map-marker-alt"></i><a href="https://www.google.com/maps?q=42.69751,23.32415" target="_blank" rel="noopener">ул. Йордан Трифонов 8А, София</a></p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+      <p>Проект и дизайн © 2025 КТ СТРОЙ КОНСУЛТ ЕООД. Всички права запазени.</p>
+    </div>
+  </footer>
+
+  <!-- Rendering & UI Script -->
+  <script>
+    // Hamburger toggle + close on link
+    const ham = document.querySelector('.hamburger');
+    const menu = document.querySelector('.container.menu');
+    ham.addEventListener('click', () => menu.classList.toggle('active'));
+    document.querySelectorAll('.container.menu ul li a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
+        document.querySelectorAll('.container.menu ul li a').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+
+    // Back to top button
+    const backBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backBtn.style.display = window.pageYOffset > 300 ? 'flex' : 'none';
+    });
+    backBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Projects rendering (logic from in-progress.html)
+    const projects = [
+      { title: "Изграждане на офис сграда и медицински център", slug: "klinika", location: "бул. Симеоновско шосе, София", category: "Обществени сгради", thumb: "images/completed/klinika/4.jpeg" },
+      { title: "Преустройство на зала „Света София“ в пленарна зала", slug: "ns", location: "пл. \"Княз Александър I\" №1", category: "Обществени сгради", thumb: "images/completed/ns.jpg" },
+      { title: "Довършителни работи – жилищен комплекс", slug: "aleksov", location: "кв. Красно село, София", category: "Жилищни сгради", thumb: "images/completed/aleksov/2.JPEG" },
+{
+  title: "Преустройство и саниране",
+  slug: "uchilishte",
+  location: "кв. Красна поляна, София",
+  category: "Обществени сгради",
+  thumb: "images/completed/uchilishte/6.JPEG"
+},
+{
+  title: "НПФЕМЖС",
+  slug: "pleven",
+  location: "ул. Гренадерска, Плевен",
+  category: "Жилищни сгради",
+  thumb: "images/completed/pleven/7.JPEG"
+},
+{
+  title: "Ремонт на фасадна облицовка и покриви",
+  slug: "baucher",
+  location: "кв. Лозенец, София",
+  category: "Жилищни сгради",
+  thumb: "images/completed/baucher/7.JPEG"
+}
+
+    ];
+
+    const gallery = document.getElementById('completedGallery');
+    projects.forEach(p => {
+      const card = document.createElement('a');
+      card.className = 'project-card';
+      card.href = `detail.html?slug=${p.slug}&status=completed`;
+      card.innerHTML = `
+        <img src="${p.thumb}" alt="${p.title}" loading="lazy">
+        <div class="project-info">
+          <h3>${p.title}</h3>
+          <p class="meta">
+            <span class="label">Локация:</span><br>
+            ${p.location}<br>
+            <span class="label">Категория:</span><br>
+            ${p.category}
+          </p>
+        </div>`;
+      gallery.appendChild(card);
+    });
+
+    // Intersection Observer for fade-in
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.project-card').forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>

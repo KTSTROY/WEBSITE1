@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="КТ СТРОЙ КОНСУЛТ ЕООД – висококачествени строителни и ремонтни услуги." />
+  <meta name="theme-color" content="#000000" />
+  <title>КТ СТРОЙ КОНСУЛТ ЕООД</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- AOS Library CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Manifest за PWA -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Основен CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div id="progress-bar"></div>
+
+  <!-- НАВИГАЦИЯ -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Главна навигация">
+      <div class="container menu">
+        <ul>
+          <li><a href="#home">Начало</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#projects">Проекти</a></li>
+          <li><a href="#about">За нас</a></li>
+          <li><a href="#why-choose-us">Защо да изберете нас</a></li>
+          <li><a href="#partners">Партньори</a></li>
+          <li><a href="#clients">Клиенти</a></li>
+          <li><a href="#contact">Контакт</a></li>
+        </ul>
+      </div>
+      <div class="hamburger" tabindex="0"><i class="fas fa-bars"></i></div>
+    </nav>
+  </header>
+
+  <main role="main">
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section" data-aos="fade-up">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <img
+          src="https://i.ibb.co/spB6b5Mc/Untitled-design-4.png"
+          alt="Лого КТ СТРОЙ КОНСУЛТ"
+          class="hero-logo"
+        />
+        <h1>Добре дошли в</h1>
+        <h2>КТ СТРОЙ КОНСУЛТ ЕООД</h2>
+        <p>Строим с внимание към детайла</p>
+        <a href="#services" class="btn">Научете повече</a>
+      </div>
+    </section>
+
+        <!-- SERVICES -->
+    <section id="services" class="services-section alt-bg" data-aos="fade-up">
+      <div class="container">
+        <h2>Нашите услуги</h2>
+        <p class="section-subtitle">
+          Предлагаме цялостни решения за строителство и ремонт – гаранция за качество и професионализъм.
+        </p>
+        <div class="services-grid">
+          <div class="service-card" data-service="consultant" data-aos="zoom-in">
+            <i class="fas fa-toolbox"></i>
+            <h3>
+              Консултантски услуги и управление на проекти
+              <i class="fas fa-info-circle detail-icon"></i>
+            </h3>
+            <p>Ние предлагаме професионални консултациии управление на строителни проекти за инвеститори, фирми и частни клиенти. Помагаме Ви да взимате информирани решения, да избегнете скъпи грешки и да постигнете отлични резултати в рамките на планирания бюджет и срок.</p>
+          </div>
+          <div class="service-card" data-service="construction" data-aos="zoom-in" data-aos-delay="100">
+            <i class="fas fa-hammer"></i>
+            <h3>
+              Цялостно строителство
+              <i class="fas fa-info-circle detail-icon"></i>
+            </h3>
+            <p>Предлагаме изпълнение на строителни обекти от нулев етап до въвеждане в експлоатация. Работим с доверени партньори, следим всяка фаза от процеса и гарантираме високо качество и прозрачност на строителния процес.</p>
+          </div>
+          <div class="service-card" data-service="renovation" data-aos="zoom-in" data-aos-delay="200">
+            <i class="fas fa-paint-roller"></i>
+            <h3>
+              Основни ремонти
+              <i class="fas fa-info-circle detail-icon"></i>
+            </h3>
+            <p>Извършваме пълни вътрешни и външни ремонти на апартаменти, къщи, офиси и търговски обекти. Подхождаме професионално към всеки проект - с точна организация, стриктен контрол и ясен график.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SVG Separator -->
+    <div class="section-separator"></div>
+
+    <!-- ПРОЕКТИ -->
+<section id="projects" class="projects-section" data-aos="fade-up">
+  <div class="container">
+    <h2>Наши проекти</h2>
+    <p class="section-subtitle">
+      Изберете категория и разгледайте нашите изпълнения и завършени проекти.
+    </p>
+
+    <div class="project-categories">
+      <!-- В ИЗПЪЛНЕНИЕ -->
+      <a href="in-progress.html"
+         class="project-category"
+         style="background-image: url('images/projects/in-progress/111.jpg')">
+        <div class="category-overlay"></div>
+        <h3>В ИЗПЪЛНЕНИЕ</h3>
+      </a>
+
+      <!-- ЗАВЪРШЕНИ ПРОЕКТИ -->
+      <a href="completed.html"
+         class="project-category"
+         style="background-image: url('images/projects/completed/222.jpg')">
+        <div class="category-overlay"></div>
+        <h3>ЗАВЪРШЕНИ ПРОЕКТИ</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section alt-bg" data-aos="fade-up">
+      <div class="container">
+        <h2>За нас</h2>
+        <p class="section-subtitle">
+          Години опит и множество успешни проекти – гаранция за качество и професионализъм.
+        </p>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Въпреки че "КТ Строй Консулт" ЕООД е новосъздадена компания, нашият екип от специалисти притежава над 10 години професионален опит, натрупан при изпълнение на множество успешни проекти за големи инвеститори и водещи компании. Нашият Управител е ръководил изграждането на редица мащабни проекти, включително жилищни сгради, офис центрове, реконструкция и ремонт на съществуващи сгради, училища и др. Този опит е гаранция за успешната реализация на Вашия проект.
+            </p>
+          </div>
+          <div class="about-image-container">
+            <img
+              src="https://i.ibb.co/qLDqL6BT/Leonardo-Phoenix-10-Ultrarealistic-collagestyle-image-showing-0.jpg"
+              alt="Опит и качество"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why-choose-us" class="why-choose-us-section" data-aos="fade-up">
+      <div class="container">
+        <h2>Защо да изберете нас</h2>
+        <div class="why-grid">
+          <div class="why-item" data-aos="zoom-in" data-aos-delay="0">
+            <i class="fas fa-check-circle"></i>
+            <h3><span class="badge">1</span> Личен ангажимент</h3>
+            <p>Експертно мнение и пълен контрол върху всеки етап.</p>
+          </div>
+          <div class="why-item" data-aos="zoom-in" data-aos-delay="100">
+            <i class="fas fa-users"></i>
+            <h3><span class="badge">2</span> Стриктен контрол</h3>
+            <p>Постоянен мониторинг на качество и срокове.</p>
+          </div>
+          <div class="why-item" data-aos="zoom-in" data-aos-delay="200">
+            <i class="fas fa-clock"></i>
+            <h3><span class="badge">3</span> Прозрачност</h3>
+            <p>Ясни оферти и открита комуникация.</p>
+          </div>
+          <div class="why-item" data-aos="zoom-in" data-aos-delay="300">
+            <i class="fas fa-cogs"></i>
+            <h3><span class="badge">4</span> Гъвкави решения</h3>
+            <p>Персонализирани варианти спрямо бюджет и нужди.</p>
+          </div>
+          <div class="why-item" data-aos="zoom-in" data-aos-delay="400">
+            <i class="fas fa-leaf"></i>
+            <h3><span class="badge">5</span> Екологичен подход</h3>
+            <p>Работим чисто, безопасно и щадящо околната среда.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section id="partners" class="partners-section alt-bg" data-aos="fade-up">
+      <div class="container">
+        <h2>Партньори</h2>
+        <p class="section-subtitle">
+          Работим с водещи компании и доставчици, които ни помагат да постигнем най-високи стандарти.
+        </p>
+        <div class="partners-grid">
+          <img src="https://cdncloudcart.com/13688/logo/7_600x600.jpeg?1595859148" alt="Maxxmart" class="partner-logo"/>
+          <img src="https://i.ibb.co/h1K4QBCM/images.png" alt="Angro" class="partner-logo"/>
+          <img src="https://i.ibb.co/N2vfT60n/KNAU.png" alt="Knauf" class="partner-logo"/>
+          <img src="https://i.ibb.co/ds6gPqpM/images-1.png" alt="Baumit" class="partner-logo"/>
+          <img src="https://i.ibb.co/21rKKC3r/images-2.png" alt="Terazid" class="partner-logo"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <section id="clients" class="clients-section alt-bg" data-aos="fade-up">
+      <div class="container">
+        <h2>Клиенти</h2>
+        <p class="section-subtitle">Отзивите на нашите доволни клиенти потвърждават професионализма ни.</p>
+        <div id="client-slider" class="slider">
+          <div class="client-card active">
+            <p class="client-feedback">“Страхотно обслужване и изпълнение – проектът беше завършен точно както очаквахме.”</p>
+            <p class="client-name">- Иван Петров</p>
+          </div>
+          <div class="client-card">
+            <p class="client-feedback">“Професионализъм до последния детайл. Препоръчвам КТ СТРОЙ КОНСУЛТ на всеки!”</p>
+            <p class="client-name">- Мария Георгиева</p>
+          </div>
+          <div class="client-card">
+            <p class="client-feedback">“Високо качество и отлично обслужване. Много сме доволни!”</p>
+            <p class="client-name">- Георги Димитров</p>
+          </div>
+          <div class="client-card">
+            <p class="client-feedback">“Екипът надмина очакванията ми по отношение на срокове и качество!”</p>
+            <p class="client-name">- Елена Иванова</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section id="contact" class="contact-section" data-aos="fade-up">
+      <div class="container">
+        <h2>Контакт</h2>
+        <p class="section-subtitle">
+          Имате въпрос или проект? Не се колебайте – свържете се с нас!
+        </p>
+        <a href="#footer-contacts" class="btn">Свържете се сега</a>
+      </div>
+    </section>
+  </main>
+on>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer-contacts">
+    <div class="footer-container">
+      <h3>Контакти</h3>
+      <p><i class="fas fa-phone"></i> <a href="tel:+359883481292">+359 883 481 292</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:y.aleksiev@ktstroyconsult.com">y.aleksiev@ktstroyconsult.com</a></p>
+      <p><i class="fas fa-map-marker-alt"></i>
+        <a
+          href="https://www.google.com/maps?q=42.69751,23.32415"
+          target="_blank"
+          rel="noopener"
+        >ул. Йордан Трифонов 8А, София</a>
+      </p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+      <p>Проект и дизайн © 2025 КТ СТРОЙ КОНСУЛТ ЕООД. Всички права запазени.</p>
+    </div>
+  </footer>
+
+  <!-- SERVICE DETAILS MODAL -->
+  <div id="service-modal" class="modal" aria-hidden="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-window">
+      <button class="modal-close" aria-label="Затвори">&times;</button>
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+      <ul id="modal-list"></ul>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true">
+    <span class="lightbox-close" aria-label="Затвори">&times;</span>
+    <img id="lightbox-img" src="" alt="Голям изглед" />
+  </div>
+
+  <!-- BACK-TO-TOP -->
+  <button id="back-to-top" aria-label="Назад към началото">&#8679;</button>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    AOS.init({ duration: 1200, once: true, offset: 100 });
+  </script>
+
+  <!-- Основен JS -->
+  <!-- Основен JS – копирайте го изцяло и го заменете във вашия index.html преди </body> -->
+<script>
+  // Hamburger toggle
+  document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('.menu').classList.toggle('active');
+  });
+
+  // Scroll progress bar
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = (scrollTop / scrollHeight) * 100;
+    document.getElementById('progress-bar').style.width = pct + '%';
+  });
+
+  // Back-to-top button
+  const backBtn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backBtn.style.display = 'flex';
+    } else {
+      backBtn.style.display = 'none';
+    }
+  });
+  backBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Lightbox for project images
+  const lightboxModal = document.getElementById('lightbox-modal');
+  const lightboxImg   = document.getElementById('lightbox-img');
+  document.querySelectorAll('.project-image').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxModal.style.display = 'flex';
+      lightboxModal.setAttribute('aria-hidden', 'false');
+    });
+  });
+  document.querySelector('.lightbox-close').addEventListener('click', () => {
+    lightboxModal.style.display = 'none';
+    lightboxImg.src = '';
+  });
+  lightboxModal.addEventListener('click', e => {
+    if (e.target.id === 'lightbox-modal') {
+      lightboxModal.style.display = 'none';
+      lightboxImg.src = '';
+    }
+  });
+
+  // Service modal data
+  const servicesData = {
+    consultant: {
+      desc: "Какво предлагаме?",
+      items: [
+        "Планиране на етапите на проекта спрямо целите на клиента",
+        "Създаване и поддържане на строителен график",
+        "Контрол на бюджета - проследяване на разходите и одобрение на плащанията",
+        "Предложения за оптимизация на разходите и сроковете",
+        "Отчети към клиента (седмични/месечни)",
+        "Представителство пред проектанти, строители, надзор и институции",
+        "Организация и водене на координационни срещи",
+        "Водене на кореспонденция с всички участници",
+        "Управление на договори и възлагания",
+        "Следене на напредъка по строителните работи",
+        "Проверка за съответствие с проекта и нормативните изисквания",
+        "Приемане на СМР",
+        "Технически и финансов анализ при промени в проекта",
+        "Присъствие на всички ключови етапи"
+      ]
+    },
+    construction: {
+      desc: "Избирайки нас Вие получавате :",
+      items: [
+      "Изработване и верификация на изпълнителна документация",
+      "Планиране и оптимизация на строителен график",
+      "Управление на доставки и логистика на материали",
+      "Контрол на качеството по международни стандарти",
+      "Административно водене на документация и разрешителни",
+      "Координация между подизпълнители и доставчици",
+      "Мониторинг на напредъка чрез дигитални инструменти",
+      "Бюджетен контрол и прогнозен финансов анализ",
+      "Управление на рискове и фактори на закъснение",
+      "Осигуряване на безопасност и стандартите за трудова защита",
+      "Изграждане на конструкции и носещи елементи",
+      "Монтаж на общи инженерни инсталации (електрическа, ВиК, ОВК)"
+    ]
+    },
+    renovation: {
+      desc: "Ето само част от някои дейности които предлагаме :",
+       items: [
+      "Демонтаж и обезопасяване на стари конструкции",
+      "Подсилване и възстановяване на носещи елементи",
+      "Хидроизолация и топлоизолация на покриви и фасади",
+      "Реконструкция и ремонт на покривни покрития",
+      "Подмяна на фасадна и интериорна облицовка",
+      "Монтаж на нови дограма, врати и парапети",
+      "Реконфигурация на интериорни пространства",
+      "Подмяна и модернизация на електро и ВиК инсталации",
+      "Полагане на замазки, мазилки и фини шпакловки",
+      "Поставяне на нови подови настилки и покрития",
+      "Фина бояджийска и декоративна мазилка",
+      "Акустична изолация и шумоизолиране на помещения",
+      "Въвеждане в експлоатация и протокол за приемане",
+      "Кратки срокове с минимално въздействие върху ежедневието",
+      "Опции за енергийна ефективност и LED осветление"
+    ]
+    }
+  };
+
+  // Service modal handlers
+  const modal   = document.getElementById('service-modal'),
+        overlay = modal.querySelector('.modal-overlay'),
+        closeBtn= modal.querySelector('.modal-close'),
+        titleEl = document.getElementById('modal-title'),
+        descEl  = document.getElementById('modal-desc'),
+        listEl  = document.getElementById('modal-list');
+
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => {
+      const key = card.dataset.service;
+      const data = servicesData[key];
+      if (!data) return;
+      titleEl.textContent = card.querySelector('h3').textContent.trim();
+      descEl.textContent  = data.desc;
+      listEl.innerHTML    = data.items.map(i => `<li>${i}</li>`).join('');
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden', 'false');
+    });
+  });
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+  });
+  overlay.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+  });
+
+  // Mobile nav: mark active link + auto-close
+  document.querySelectorAll('.menu ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelectorAll('.menu ul li a').forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      document.querySelector('.menu').classList.remove('active');
+    });
+  });
+</script>
+
+
+  <!-- Service Worker -->
+  <script src="service-worker.js"></script>
+</body>
+</html>

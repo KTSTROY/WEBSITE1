@@ -1,0 +1,985 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIABLES */
+:root {
+  --bg: #fff;
+  --bg-alt: #fafafa;
+  --text: #333;
+  --muted: #555;
+  --accent: #ff6600;
+  --accent-dark: #cc5200;
+  --shadow: rgba(0,0,0,0.1);
+  --font-body: 'Open Sans', sans-serif;
+  --font-head: 'Montserrat', sans-serif;
+  --lh: 1.7;
+  --maxW: 700px;
+  --tr: 0.3s ease;
+}
+
+/* GLOBAL */
+html { scroll-behavior: smooth; background: var(--bg); color: var(--text); }
+body { font-family: var(--font-body); line-height: var(--lh); }
+
+/* CONTAINER */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+/* SECTION SPACING */
+section { padding: 4rem 0; }
+
+/* ALTERNATE BACKGROUND WITH GRADIENT */
+.alt-bg {
+  background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-head);
+  color: var(--text);
+}
+h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+h2 { font-size: 2rem; margin-bottom: 1rem; position: relative; display: inline-block; }
+h2::before {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -0.5rem;
+  width: 3rem; height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+p { max-width: var(--maxW); margin: 0 auto 1.5rem; color: var(--muted); }
+
+/* BUTTON MICRO-ANIMATION */
+.btn {
+  position: relative; overflow: hidden;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none; border-radius: 4px;
+  text-decoration: none; font-weight: 600;
+  transition: background var(--tr), transform var(--tr);
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.2);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+.btn:hover::after {
+  transform: scaleX(1);
+}
+
+/* NAVBAR */
+.navbar {
+  background: #000;
+  padding: 1rem 0;
+  position: sticky; top: 0;
+  z-index: 1000;
+}
+.menu ul { display: flex; gap: 1.5rem; justify-content: center; list-style: none; }
+.menu ul li a {
+  color: #fff; text-decoration: none; font-weight: 600;
+  transition: color var(--tr), border-bottom var(--tr);
+}
+.menu ul li a:hover {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+.hamburger {
+  display: none; position: absolute;
+  top: 1rem; right: 1rem;
+  font-size: 1.5rem; color: #fff;
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  .hamburger { display: block; }
+  .menu {
+    position: absolute; top: 100%; right: 0;
+    width: 200px; background: #000;
+    transform: translateY(-100%);
+    transition: transform var(--tr);
+  }
+  .menu.active { transform: translateY(0); }
+  .menu ul { flex-direction: column; padding: 1rem; }
+}
+
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  height: 70vh;
+  background: url("https://i.ibb.co/Q7DMd2Cy/Leonardo-Kino-XL-Two-young-confident-construction-engineers-wi-1.jpg") center/cover no-repeat fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+.hero-content {
+  position: relative; z-index: 1;
+  color: #fff;
+}
+.hero-logo {
+  width: 260px; height: auto;
+  margin-bottom: 1rem;
+  transition: transform var(--tr), filter var(--tr);
+}
+.hero-logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.8));
+}
+.hero-content h1 { margin-bottom: 0.25rem; color: #fff; }
+.hero-content h2 { margin-bottom: 1rem; color: #fff; }
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #fff !important;
+}
+
+/* SECTION SEPARATOR (SVG) */
+.section-separator {
+  width: 100%;
+  height: 4rem;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDEyODAgNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGgxMjgwdjIwaC0xMjgweiIgZmlsbD0iI2ZhZmFmYSIvPjxwYXRoIGQ9Ik0wIDQwbDEyODAgMC42VjIwaC0xMjgweiIgZmlsbD0iI2ZmZmZmZiIvPjwvc3ZnPg==') no-repeat bottom center;
+  background-size: cover;
+}
+
+/* SERVICES */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.service-card {
+  background: var(--bg); padding: 2rem;
+  border-radius: 8px; text-align: center;
+  transition: transform var(--tr), box-shadow var(--tr);
+  cursor: pointer;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+.service-card i {
+  font-size: 1.5rem; display: inline-block;
+  background: var(--accent); color: #fff;
+  padding: 0.5rem; border-radius: 50%;
+  margin-bottom: 1rem;
+}
+.detail-icon {
+  margin-left: 0.5rem;
+  color: var(--muted);
+  transition: color var(--tr), transform var(--tr);
+}
+.service-card h3:hover .detail-icon {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.project-card {
+  transition: transform var(--tr), box-shadow var(--tr);
+  will-change: transform;
+}
+.project-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+.project-image {
+  width: 100%; display: block;
+}
+
+/* CENTERED BUTTON */
+.btn-center { text-align: center; margin-top: 2rem; }
+
+/* LIGHTBOX */
+.lightbox-modal {
+  display: none !important;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.9);
+  align-items: center; justify-content: center;
+  z-index: 2000;
+}
+#lightbox-img[src=""] { display: none; }
+.lightbox-close {
+  position: absolute; top: 1rem; right: 1rem;
+  font-size: 2.5rem; color: #fff; cursor: pointer;
+}
+
+/* ABOUT */
+.about-content {
+  display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem;
+}
+.about-text, .about-image-container {
+  flex: 1 1 300px;
+}
+.about-image-container img {
+  width: 100%; border-radius: 8px;
+}
+
+/* WHY CHOOSE US */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem; margin-top: 2rem;
+}
+.why-item {
+  background: var(--bg); padding: 2rem; border-radius: 8px;
+  transition: transform var(--tr);
+}
+.why-item:hover {
+  transform: translateY(-3px);
+}
+.badge {
+  background: var(--accent); color: #fff;
+  border-radius: 50%; width: 1.8rem; height: 1.8rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-right: 0.5rem;
+}
+
+/* PARTNERS */
+.partners-section .partners-grid {
+  display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  gap: 2rem; align-items: center; margin-top: 2rem;
+}
+.partner-logo {
+  max-width: 100%; max-height: 80px; object-fit: contain;
+  transition: opacity var(--tr);
+}
+.partner-logo:hover {
+  opacity: 0.7;
+}
+
+/* CLIENTS */
+.slider .client-card {
+  display: none; background: var(--bg-alt); padding: 2rem; border-radius: 8px;
+}
+.slider .client-card.active { display: block; }
+.client-feedback { font-style: italic; margin-bottom: 1rem; }
+.client-name { text-align: right; font-weight: 600; }
+
+/* CONTACT CTA */
+.contact-section {
+  text-align: center;
+  background: var(--bg-alt);
+}
+.contact-section .btn {
+  margin-top: 1rem;
+}
+
+/* FOOTER */
+footer { background: #000; color: #fff; padding: 2rem 1rem; text-align: center; }
+footer h3 { margin-bottom: 1rem; }
+footer p { margin-bottom: 0.75rem; }
+footer a { color: var(--accent); text-decoration: none; }
+.footer-social a {
+  color: #fff; font-size: 1.5rem; margin: 0 0.5rem;
+  transition: opacity var(--tr);
+}
+.footer-social a:hover {
+  opacity: 0.7;
+}
+
+/* MODAL */
+.modal {
+  display: none; position: fixed; inset: 0; z-index: 2000;
+}
+.modal-overlay {
+  position: absolute; inset: 0; background: rgba(0,0,0,0.6);
+}
+.modal-window {
+  position: relative; max-width: 480px; margin: 5vh auto;
+  padding: 2rem; background: #fff; border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  max-height: 80vh; overflow-y: auto; box-sizing: border-box;
+}
+.modal-close {
+  position: absolute; top: 0.5rem; right: 1rem; background: none;
+  border: none; font-size: 1.5rem; cursor: pointer; color: #333;
+}
+.modal-window h3,
+.modal-window p {
+  margin-bottom: 1rem;
+}
+.modal-window ul {
+  list-style: disc inside;
+}
+
+/* BACK-TO-TOP */
+#back-to-top {
+  display: none; position: fixed; bottom: 2rem; right: 2rem;
+  width: 3.5rem; height: 3.5rem; background: var(--accent);
+  color: #fff; border: none; border-radius: 50%; font-size: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background var(--tr);
+}
+#back-to-top:hover {
+  background: var(--accent-dark);
+}
+
+/* AOS OVERRIDE */
+[data-aos] { opacity: 0; }
+[data-aos].aos-animate {
+  opacity: 1; transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 992px) {
+  h1 { font-size: 2rem; }
+  .hamburger { display: block; }
+  .menu {
+    position: absolute; top: 100%; right: 0;
+    width: 200px; background: #000;
+    transform: translateY(-100%); transition: transform var(--tr);
+  }
+  .menu.active { transform: translateY(0); }
+  .menu ul { flex-direction: column; padding: 1rem; }
+}
+@media (max-width: 768px) {
+  h2 { font-size: 1.75rem; }
+  .services-grid,
+  .projects-grid { gap: 1rem; }
+  .service-card,
+  .project-card { padding: 1.5rem; }
+  .why-grid { grid-template-columns: 1fr; }
+}
+/* --- Mobile navigation: вертикално падащо меню зад бургер --- */
+@media (max-width: 768px) {
+  /* Покажи бургер-а */
+  .hamburger {
+    display: block;
+    z-index: 1100;
+  }
+
+  /* Скрий менюто по подразбиране (before active) */
+  .menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 80%;
+    max-width: 300px;
+    background: #000;
+    transform: translateY(-100%);
+    transition: transform var(--tr);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  /* При active – менюто пада вертикално */
+  .menu.active {
+    transform: translateY(0);
+  }
+
+  /* Линковете – вертикално подредени */
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    list-style: none;
+  }
+  .menu ul li a {
+    color: #fff;
+    padding: 0.5rem 0;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .menu ul li a:hover {
+    color: var(--accent);
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* Увери се, че хедърът е в относително позициониране */
+  header {
+    position: relative;
+    z-index: 1000;
+  }
+
+  /* Секция падинги и типография (по-компактни) */
+  section {
+    padding: 2rem 1rem !important;
+  }
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  p, .section-subtitle {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+}
+/* Активен линк (оранжев + подчертан) в мобилно меню */
+@media (max-width: 768px) {
+  .menu ul li a.active {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+  }
+}
+/* За мобилни телефони в landscape (ротация): по-ниска височина и центриране */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-section {
+    height: 50vh;                /* намаляме височината на секцията */
+    background-position: center; /* гарантираме, че фокусът е центриран */
+  }
+  .hero-content h1 { font-size: 1.5rem; }
+  .hero-content h2 { font-size: 1.25rem; }
+  .hero-content p  { font-size: 1rem; }
+}
+/* По-малко gap и padding в Why-choose-us на мобилни */
+@media (max-width: 768px) {
+  #why-choose-us .why-grid {
+    gap: 1rem;              /* намали разстоянието между елементите */
+  }
+  #why-choose-us .why-item {
+    padding: 1rem;          /* по-компактни вътрешни отстъпи */
+    margin-bottom: 1rem;    /* малко разстояние под всеки елемент */
+  }
+}
+/* ----------- Допълнителни мобилни корекции ----------- */
+@media (max-width: 768px) {
+
+  /* 1) За „Защо да изберете нас“: още по-компактно */
+  #why-choose-us .why-grid {
+    gap: 0.5rem !important;          /* намаляме разстоянието между колоните */
+  }
+  #why-choose-us .why-item {
+    padding: 0.75rem !important;     /* по-малки вътрешни отстъпи */
+    margin-bottom: 0.75rem !important;
+  }
+  #why-choose-us .why-item h3 {
+    margin-bottom: 0.25rem;          /* тесни междуредия */
+    font-size: 1rem;                 /* по-малък шрифт за заглавията */
+  }
+  #why-choose-us .why-item p {
+    margin-bottom: 0;                /* махаме празен ред */
+    font-size: 0.875rem;             /* по-компактен текст */
+  }
+
+  /* 2) За ротация (landscape): hero секция да не се изрязва */
+  @media (orientation: landscape) {
+    .hero-section {
+      height: auto !important;       /* автоматична височина */
+      min-height: 40vh;              /* минимум 40% от височината */
+      padding: 2rem 0;               /* малко вътрешни отстъпи */
+      background-attachment: scroll; /* премахва fixed, за да не се изрязва */
+      background-size: cover;        /* запазва cover, но без fixed */
+    }
+    .hero-content {
+      padding: 0 1rem;               /* малко вътрешно падване */
+    }
+    .hero-content h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+    .hero-content h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero-content p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+/* ---- Mobile: скриваме черния бар (background) и падинга на header ---- */
+@media (max-width: 768px) {
+  .navbar {
+    background: transparent !important;
+    padding: 0 !important;
+  }
+  /* Оставяме само бургер-иконката – menu се крие с вече реализирания translateY */
+  /* Нищо друго не се променя: .menu.active все още подава навигацията */
+}
+/* Мобилно: постоянен glow на hero-logo */
+@media (max-width: 768px) {
+  /* keyframes за glow анимация */
+  @keyframes heroGlow {
+    from {
+      filter: drop-shadow(0 0 8px rgba(255,255,255,0.8));
+    }
+    to {
+      filter: drop-shadow(0 0 20px rgba(255,255,255,1));
+    }
+  }
+
+  .hero-logo {
+    /* стартираме анимацията */
+    animation: heroGlow 1.5s ease-in-out infinite alternate;
+  }
+}
+/* --------------------
+   Tablet (768px – 1024px)
+   -------------------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* По-удобни падинги и по-голяма четливост */
+  section {
+    padding: 3rem 1.5rem !important;
+  }
+
+  /* Hero: по-малка височина, по-големи текстове */
+  .hero-section {
+    height: 60vh;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content h2 {
+    font-size: 1.75rem;
+  }
+  .hero-content p {
+    font-size: 1.125rem;
+  }
+
+  /* Services & Projects: по две колони */
+  .services-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Why-choose-us: две колони вместо една */
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Partners: по-големи лога, по-малък gap */
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  /* Clients slider: по-удобен размер */
+  .slider .client-card {
+    padding: 1.5rem !important;
+  }
+
+  /* Footer: по-широк контейнер */
+  .footer-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+/* ------------------------------
+   Ultrawide monitors (3440px и нагоре)
+   ------------------------------ */
+@media (min-width: 3440px) {
+  /* Ограничаваме ширината на контейнера за по-добро четене */
+  .container,
+  .footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Hero: по-голяма височина и текстове */
+  .hero-section {
+    height: 80vh;
+  }
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  .hero-content h2 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1.5rem;
+  }
+
+  /* Services & Projects: по три колони */
+  .services-grid,
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem !important;
+  }
+
+  /* Why-choose-us: три колони */
+  .why-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Partners: четири колони */
+  .partners-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 2rem !important;
+  }
+
+  /* Увеличаваме размера на футъра */
+  footer {
+    padding: 3rem 2rem;
+  }
+}
+/* === Секция Проекти: две категории гриф и ефекти === */
+.project-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-category {
+  position: relative;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+}
+
+.project-category h3 {
+  position: relative;
+  color: #fff;
+  font-size: 2rem;
+  z-index: 2;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  margin: 0;
+}
+
+.category-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  transition: background 0.4s ease, transform 0.4s ease;
+  z-index: 1;
+}
+
+/* Hover/Active ефект */
+.project-category:hover,
+.project-category:active {
+  transform: scale(1.03);
+}
+.project-category:hover .category-overlay,
+.project-category:active .category-overlay {
+  background: rgba(0,0,0,0.6);
+  transform: scale(1.1);
+}
+
+/* Мобилна адаптация: един стълб и по-малка височина */
+@media (max-width: 768px) {
+  .project-categories {
+    grid-template-columns: 1fr;
+  }
+  .project-category {
+    height: 180px;
+  }
+  .project-category h3 {
+    font-size: 1.5rem;
+  }
+}
+/* хоризонтален скрол за галерията */
+.project-gallery {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+.project-gallery img {
+  flex: 0 0 auto;
+  width: 300px;    /* или друг размер по избор */
+  height: auto;
+  border-radius: 4px;
+}
+
+/* “В числа” – мрежа */
+.project-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.value-cell {
+  background: #f5f5f5;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4px;
+}
+.value-cell h4 {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+}
+.value-cell p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+
+
+/* ============== Breadcrumb / Back-link ============== */
+.back-link {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+.back-link a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* ============== Project Meta (grid-карти) ============== */
+.project-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.project-meta p {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin: 0;
+}
+.project-meta strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+.project-meta span {
+  font-size: 1.1rem;
+  color: #222;
+}
+
+/* ============== Галерия със scroll-snap ============== */
+.project-gallery {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+.project-gallery img {
+  flex: 0 0 auto;
+  width: 300px;
+  height: auto;
+  border-radius: 4px;
+  scroll-snap-align: start;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+.project-gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* ============== Описание и “В числа” ============== */
+.project-description {
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+.project-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
+.value-cell {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.value-cell h4 {
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+  color: #222;
+}
+.value-cell p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* ============== Заглавие ============== */
+h1#project-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+/* ---------- Back-link ---------- */
+.back-link {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+.back-link a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Заглавие и горна мета ---------- */
+.project-meta#project-meta-top {
+  margin-bottom: 1.5rem;
+}
+.project-meta#project-meta-top p {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+}
+.project-meta#project-meta-top strong {
+  font-weight: 600;
+  color: #555;
+}
+
+/* ---------- Основно изображение (фиксиран контейнер) ---------- */
+.project-gallery-main {
+  width: 100%;
+  height: 500px;           /* фиксирана височина */
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+.project-gallery-main img#project-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* запълва контейнера без деформации */
+  display: block;
+}
+
+/* ---------- Хоризонтален скрол ---------- */
+.project-gallery {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+.project-gallery img {
+  flex: 0 0 auto;
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: transform 0.2s, border 0.2s;
+  border: 2px solid transparent;
+}
+.project-gallery img:hover,
+.project-gallery img.active {
+  transform: scale(1.05);
+  border-color: #333;
+}
+
+/* ---------- Секция „За проекта“ – контейнер ---------- */
+.project-details-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+.section-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.25rem;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 2px;
+  background: #e0e0e0;
+  margin: 0.25rem auto 0;
+}
+
+/* ---------- Двуколонна „За проекта“ ---------- */
+.project-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;  /* лява 1/3, дясна 2/3 */
+  gap: 2rem;
+  align-items: start;
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+.info-label {
+  font-weight: 600;
+  color: #555;
+}
+.info-value {
+  color: #222;
+}
+.project-info-right {
+  line-height: 1.6;
+  color: #333;
+}
+/* Центрираме „За проекта“ */
+.project-details-section {
+  text-align: center;
+}
+.section-title {
+  display: inline-block;      /* за да мери ширината само на текста */
+  margin: 2rem auto 1rem;     /* горно/долно разстояние и центрирано хоризонтално */
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid #e0e0e0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Заглавия на колоните */
+.info-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+/* Двуколнен layout остава както е */
+.project-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  margin-top: 1rem;
+  text-align: left;           /* съдържанието в колоните да е ляво подравнено */
+}
+
+/* Малко пространство под заглавието на колоната */
+.project-info-left,
+.project-info-right {
+  padding: 0 1rem;  
+}
+.footer-container i {
+  color: var(--highlight);
+}
+/* Скриваме pseudo-елемента само за заглавието в .hero-content */
+.hero-content h2::before {
+  display: none !important;
+}
+
+
+
+
+
