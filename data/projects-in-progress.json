@@ -81,16 +81,16 @@
   "description": "<p><strong>Цялостно преустройство на апартамент в кв. Хиподрума</strong></p><p>Изпълняваме пълно преустройство и основен ремонт на апартамент, включващ както конструктивни промени, така и цялостно обновяване на интериора.</p><p>Част от стените се демонтират с цел разширяване на помещенията и промяна на тяхното функционално предназначение.<br>Съществуващата подова настилка се отстранява поради износване и неравности.<br>С новата настилка ще се постигне едно ниво в целия апартамент и стабилна основа за полагане на нови покрития.</p><p>Извършва се цялостна подмяна на ВиК и ел. инсталациите.<br>Баните се изграждат наново според проекти от интериорен дизайнер.</p><p>Монтират се окачени тавани от гипсокартон във всички помещения.<br>Подменят се входната врата и всички интериорни врати.<br>Извършват се цялостна шпакловка и боядисване на всички стени и тавани.</p>",
 
   "gallery": [
-    "images/in-progress/apartament/1.jpeg",
-    "images/in-progress/apartament/2.jpeg",
-    "images/in-progress/apartament/3.jpeg",
-    "images/in-progress/apartament/4.jpeg",
-    "images/in-progress/apartament/5.jpeg",
-    "images/in-progress/apartament/5.jpeg",
-    "images/in-progress/apartament/7.jpeg",
-    "images/in-progress/apartament/8.jpeg",
-    "images/in-progress/apartament/9.jpeg",
-    "images/in-progress/apartament/10.jpeg"
+    "images/in-progress/apartament/1.JPEG",
+    "images/in-progress/apartament/2.JPEG",
+    "images/in-progress/apartament/3.JPEG",
+    "images/in-progress/apartament/4.JPEG",
+    "images/in-progress/apartament/5.JPEG",
+    "images/in-progress/apartament/5.JPEG",
+    "images/in-progress/apartament/7.JPEG",
+    "images/in-progress/apartament/8.JPEG",
+    "images/in-progress/apartament/9.JPEG",
+    "images/in-progress/apartament/10.JPEG"
   ],
   "values": [
     { "label": "ЗП", "value": "100 кв.м" },
