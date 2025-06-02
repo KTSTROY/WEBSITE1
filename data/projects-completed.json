@@ -93,16 +93,16 @@
   "slug": "pleven",
   "location": "ул. Гренадерска, Плевен",
   "category": "Жилищни сгради",
-  "thumb": "images/completed/Плевен/7.jpeg",
+  "thumb": "images/completed/Плевен/7.JPEG",
   "description": "<p>Предвижда се <strong>подмяна на старата дървена дограма с нова PVC дограма</strong>, с цел повишаване на енергийната ефективност и шумоизолацията на сградата.</p><p>Ще бъде изпълнена <strong>топлоизолация по всички фасади</strong>, като част от мерките за обновяване на ограждащите елементи.</p><p>Монтират се <strong>нови ламаринени шапки по бордовете</strong>, съобразени с увеличената дебелина на фасадата вследствие на поставената изолационна система.</p><p>Предвижда се <strong>монтаж на топлоизолация под покривната плоча</strong>, което допълнително ще подобри термичния комфорт в сградата.</p><p>Ще бъде изпълнена <strong>нова хидроизолация на покрива</strong>, както и <strong>изграждане на нов парапет по западната фасада</strong>, в съответствие с конструктивните и архитектурни изисквания.</p>",
   "gallery": [
-    "images/completed/pleven/7.jpeg",
+    "images/completed/pleven/7.JPEG",
     "images/completed/pleven/3.jpg",
-    "images/completed/pleven/5.jpeg",
-    "images/completed/pleven/6.jpeg",
-    "images/completed/pleven/8.jpeg",
-    "images/completed/pleven/9.jpeg",
-    "images/completed/pleven/10.jpeg"
+    "images/completed/pleven/5.JPEG",
+    "images/completed/pleven/6.JPEG",
+    "images/completed/pleven/8.JPEG",
+    "images/completed/pleven/9.JPEG",
+    "images/completed/pleven/10.JPEG"
   ],
   "values": [
     { "label": "ЗП",          "value": "517.90 кв.м" },
