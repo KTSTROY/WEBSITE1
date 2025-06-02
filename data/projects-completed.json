@@ -4,17 +4,17 @@
     "slug": "klinika",
     "location": "бул. Симеоновско шосе, София",
     "category": "Обществени сгради",
-    "thumb": "images/completed/klinika/4.jpeg",
+    "thumb": "images/completed/klinika/4.JPEG",
     "description": "<p>Обектът като функционално предназначение представлява <strong>офис сграда, медицински център по естетична пластична хирургия и естетична дерматология</strong>, както и <strong>кафе-ресторант</strong>.</p><p>Сградата е <strong>на четири етажа</strong> с <strong>пети терасовиден етаж</strong> и <strong>един подземен гараж</strong>.</p><p>Фасадата е изпълнена като <strong>комбинация от контактна топлоизолационна система и окачена фасада</strong> с алуминиева конструкция и стъклопакети. Част от остъкленията са решени тип <strong>„лакобел“</strong> с цел визуално обогатяване и модерна визия на фасадата.</p>",
     "gallery": [
-      "images/completed/klinika/4.jpeg",
-      "images/completed/klinika/1.jpg",
-      "images/completed/klinika/2.jpg",
-      "images/completed/klinika/3.jpg",
-      "images/completed/klinika/5.jpeg",
-      "images/completed/klinika/6.jpeg",
-      "images/completed/klinika/7.jpeg",
-      "images/completed/klinika/8.jpeg"
+      "images/completed/klinika/4.JPEG",
+      "images/completed/klinika/1.JPG",
+      "images/completed/klinika/2.JPG",
+      "images/completed/klinika/3.JPG",
+      "images/completed/klinika/5.JPEG",
+      "images/completed/klinika/6.JPEG",
+      "images/completed/klinika/7.JPEG",
+      "images/completed/klinika/8.JPEG"
     ],
     "values": [
       { "label": "ЗП", "value": "521.61 кв.м" },
