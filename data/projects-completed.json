@@ -133,5 +133,30 @@
     { "label": "Инвеститор","value": "Частно лице" },
     { "label": "Участие",   "value": "Технически ръководител" }
   ]
+},
+{
+  "title": "Изграждане на студентско общежитие, магазини, подземен гараж и трафопост",
+  "slug": "mycampus",
+  "location": "ул. \"проф. д-р Димитър Добрев\" №6, гр. София",
+  "category": "Жилищни сгради",
+  "thumb": "images/completed/mycampus/5.jpg",
+  "description": "<p>Обектът като функционално предназначение представлява <strong>студентско общежитие, магазини на ниво велосипедни места, подземен помещения и паркоместа на полуподземен етаж</strong>. Сградата има <strong>1 подземен етаж</strong>.</p><p>Фасадата е решена като <strong>комбинация от контактна топлоизолационна система, окачени елементи с преградни между апартаментите</strong>. Дограмата е проектирана и изпълнена от алуминиеви профили.</p><p>Над входа е проектирано <strong>парково пространство с общи зони за отдих и забавления</strong>.</p>",
+  "gallery": [
+    "images/completed/mycampus/1.JPEG",
+    "images/completed/mycampus/2.JPEG",
+    "images/completed/mycampus/3.JPEG",
+    "images/completed/mycampus/4.jpg",
+    "images/completed/mycampus/5.jpg",
+    "images/completed/mycampus/6.jpg",
+    "images/completed/mycampus/7.jpg",
+    "images/completed/mycampus/8.JPG"
+  ],
+  "values": [
+    { "label": "ЗП",        "value": "1288.80 кв.м" },
+    { "label": "РЗП",       "value": "7518.00 кв.м" },
+    { "label": "Статус",    "value": "Завършен" },
+    { "label": "Инвеститор","value": "\"Би Би Он\" ООД" },
+    { "label": "Участие",   "value": "Технически ръководител" }
+  ]
 }
 ]
