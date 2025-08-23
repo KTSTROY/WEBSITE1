@@ -43,8 +43,17 @@
       background: #000; padding: 1rem 0; position: sticky; top: 0; z-index: 1000;
     }
     .navbar .container.menu {
-      display: flex; justify-content: center; align-items: center;
+      display: flex; align-items: center; justify-content: center;
       width: 90%; max-width: 1200px; margin: 0 auto; position: relative;
+    }
+    .navbar-brand {
+      position: absolute; left: 0;
+    }
+    .navbar-brand .navbar-logo {
+      height: 40px; width: auto; transition: transform 0.3s ease;
+    }
+    .navbar-brand .navbar-logo:hover {
+      transform: scale(1.05);
     }
     .navbar ul { list-style: none; display: flex; gap: 2rem; }
     .navbar li a {
@@ -64,13 +73,23 @@
     @media (max-width: 992px) {
       .hamburger { display: block; }
       .navbar .container.menu ul { display: none; }
-      .navbar .container.menu.active ul {
-        display: flex; flex-direction: column;
+      .navbar .container.menu.active {
+        flex-direction: column; align-items: flex-start;
         background: #000; position: absolute;
         top: 100%; right: 0; width: 80%; padding: 1rem;
+        justify-content: flex-start;
       }
-      .navbar .container.menu.active ul li + li { margin-top: 1rem; }
-      .navbar .container.menu.active ul li a { color: #fff; border: none; }
+      .navbar .container.menu.active .navbar-brand { 
+        position: static; margin-bottom: 1rem; 
+      }
+      .navbar .container.menu.active ul {
+        display: flex; flex-direction: column; width: 100%; padding: 0;
+      }
+      .navbar .container.menu.active ul li { width: 100%; }
+      .navbar .container.menu.active ul li a {
+        display: block; padding: 0.5rem 0; color: #fff; border: none;
+        border-bottom: 1px solid #333;
+      }
     }
 
     /* ===== BACK BUTTON ===== */
@@ -326,6 +345,57 @@
   }
 }
 
+/* ===== IMAGE LOADING STATES ===== */
+.image-loading {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: #f0f0f0; color: var(--highlight);
+  font-size: 2rem;
+}
+.project-gallery-main {
+  position: relative;
+  min-height: 300px;
+}
+
+/* ===== GALLERY INFO ===== */
+.gallery-info {
+  display: flex; justify-content: space-between; align-items: center;
+  margin: 1rem 0; padding: 0.5rem;
+  background: rgba(0,0,0,0.05); border-radius: 4px;
+  font-size: 0.9rem; color: var(--clr-gray);
+}
+.image-counter {
+  font-weight: 600; color: var(--highlight);
+}
+.gallery-hint {
+  font-style: italic;
+}
+
+/* ===== LIGHTBOX COUNTERS & HINTS ===== */
+.lightbox-counter {
+  position: absolute; top: 3rem; left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.7); color: #fff;
+  padding: 0.5rem 1rem; border-radius: 20px;
+  font-size: 0.9rem; font-weight: 600;
+  z-index: 2200;
+}
+.lightbox-hint {
+  position: absolute; bottom: 1rem; left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.7); color: #fff;
+  padding: 0.5rem 1rem; border-radius: 20px;
+  font-size: 0.8rem; text-align: center;
+  z-index: 2200; opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .gallery-hint, .lightbox-hint {
+    display: none;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -334,6 +404,9 @@
   <header>
     <nav class="navbar" role="navigation" aria-label="Главна навигация">
       <div class="container menu">
+        <div class="navbar-brand">
+          <img src="https://i.ibb.co/spB6b5Mc/Untitled-design-4.png" alt="КТ СТРОЙ КОНСУЛТ" class="navbar-logo">
+        </div>
         <button class="hamburger" aria-label="Меню"><i class="fas fa-bars"></i></button>
         <ul>
           <li><a href="index.html#home">Начало</a></li>
@@ -355,7 +428,14 @@
     <h1 id="project-title"></h1>
 
     <div class="project-gallery-main">
-      <a id="main-link"><img id="project-main-image" alt="" loading="lazy"></a>
+      <div class="image-loading" id="mainImageLoading">
+        <i class="fas fa-spinner fa-spin"></i>
+      </div>
+      <a id="main-link"><img id="project-main-image" alt="" loading="lazy" style="display: none;"></a>
+    </div>
+    <div class="gallery-info">
+      <span class="image-counter" id="imageCounter">1 от 1</span>
+      <span class="gallery-hint">Кликнете за увеличаване</span>
     </div>
     <div class="project-gallery"></div>
 
@@ -390,6 +470,8 @@
       <button class="zoom-btn zoom-in"  aria-label="Уголеми">+</button>
       <button class="zoom-btn zoom-out" aria-label="Умалии">−</button>
     </div>
+    <div class="lightbox-counter" id="lightboxCounter">1 от 1</div>
+    <div class="lightbox-hint">Използвайте стрелките ← → или swipe за навигация</div>
     <img src="" alt="">
   </div>
 </div>
@@ -449,7 +531,30 @@
         function showInLightbox(idx) {
           currentIndex = (idx + p.gallery.length) % p.gallery.length;
           lbImg.src = p.gallery[currentIndex];
+          // Update lightbox counter
+          document.getElementById('lightboxCounter').textContent = 
+            `${currentIndex + 1} от ${p.gallery.length}`;
         }
+
+        function updateImageCounter() {
+          document.getElementById('imageCounter').textContent = 
+            `${currentIndex + 1} от ${p.gallery.length}`;
+        }
+
+        // Handle main image loading
+        const loadingIndicator = document.getElementById('mainImageLoading');
+        mainImg.onload = () => {
+          loadingIndicator.style.display = 'none';
+          mainImg.style.display = 'block';
+          updateImageCounter();
+        };
+        mainImg.onerror = () => {
+          loadingIndicator.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+          setTimeout(() => {
+            loadingIndicator.style.display = 'none';
+            mainImg.style.display = 'block';
+          }, 2000);
+        };
 
         mainImg.src    = p.gallery[0];
         mainImg.alt    = p.title;
@@ -466,11 +571,18 @@
           thumb.loading = 'lazy';
           if(i === 0) thumb.classList.add('active');
           thumb.addEventListener('click', ()=> {
+            loadingIndicator.style.display = 'flex';
+            mainImg.style.display = 'none';
+            mainImg.onload = () => {
+              loadingIndicator.style.display = 'none';
+              mainImg.style.display = 'block';
+            };
+            currentIndex = i;
             mainImg.src   = src;
             mainLink.href = src;
             gallery.querySelectorAll('img').forEach(im => im.classList.remove('active'));
             thumb.classList.add('active');
-            showInLightbox(i);
+            updateImageCounter();
           });
           gallery.appendChild(thumb);
         });
