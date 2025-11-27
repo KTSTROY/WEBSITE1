@@ -644,14 +644,8 @@
                 <span class="info-label">Категория</span>
                 <span class="info-value" id="projectCategory">-</span>
               </div>
-              <div class="info-row">
-                <span class="info-label">Статус</span>
-                <span class="info-value" id="projectStatusText">-</span>
-              </div>
-              <div class="info-row" id="yearRow" style="display: none;">
-                <span class="info-label">Година</span>
-                <span class="info-value" id="projectYear">-</span>
-              </div>
+              <!-- Dynamic values from JSON will be inserted here -->
+              <div id="dynamicValues"></div>
             </div>
 
             <div class="project-info-right">
@@ -885,10 +879,20 @@
           projectStatusText.textContent = 'В изпълнение';
         }
 
-        // Year (if available)
-        if (project.year) {
-          document.getElementById('yearRow').style.display = 'flex';
-          document.getElementById('projectYear').textContent = project.year;
+        // Dynamic values from JSON (ЗП, РЗП, Инвеститор, Участие, etc.)
+        if (project.values && project.values.length > 0) {
+          const dynamicValuesContainer = document.getElementById('dynamicValues');
+          project.values.forEach(item => {
+            if (item.value && item.value.trim() !== '') {
+              const row = document.createElement('div');
+              row.className = 'info-row';
+              row.innerHTML = `
+                <span class="info-label">${item.label}</span>
+                <span class="info-value">${item.value}</span>
+              `;
+              dynamicValuesContainer.appendChild(row);
+            }
+          });
         }
 
         // Description
