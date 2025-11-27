@@ -1,401 +1,537 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Проект | КТ СТРОЙ КОНСУЛТ</title>
-  <meta name="description" content="Информация за проект – КТ СТРОЙ КОНСУЛТ">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="КТ СТРОЙ КОНСУЛТ ЕООД – Детайли за проект" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <title>Детайли за проект | КТ СТРОЙ КОНСУЛТ</title>
 
-  <!-- Manifest & Main CSS -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
 
-  <!-- Google Font: Inter -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
-  <link
-    href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-    rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
 
   <style>
-    :root {
-      --bg: #f9f9f9;
-      --text: #333;
-      --highlight: #f36f21;
-      --shadow: rgba(0,0,0,0.08);
-      --radius: 8px;
-      --tr: 0.3s ease;
-      --ff-base: 'Inter', sans-serif;
+    /* Page container */
+    .page-container {
+      min-height: 100vh;
+      padding-top: 6rem;
+      padding-bottom: 4rem;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; }
-    body { font-family: var(--ff-base); background: var(--bg); color: var(--text); line-height: 1.6; }
 
-    a { text-decoration: none; color: inherit; }
-    img { display: block; max-width: 100%; }
+    /* Back button */
+    .back-button-container {
+      margin-bottom: 2rem;
+    }
 
-    /* ===== NAVBAR ===== */
-    .navbar {
-      background: #000; padding: 1rem 0; position: sticky; top: 0; z-index: 1000;
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      color: var(--text-primary);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all var(--transition-base);
+      text-decoration: none;
     }
-    .navbar .container.menu {
-      display: flex; align-items: center; justify-content: center;
-      width: 90%; max-width: 1200px; margin: 0 auto; position: relative;
+
+    .back-button:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateX(-4px);
     }
-    .navbar-brand {
-      position: absolute; left: 0;
+
+    .back-button i {
+      font-size: 0.75rem;
     }
-    .navbar-brand .navbar-logo {
-      height: 40px; width: auto; transition: transform 0.3s ease;
+
+    /* Project header */
+    .project-header {
+      margin-bottom: 2rem;
     }
-    .navbar-brand .navbar-logo:hover {
+
+    #project-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .project-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--accent);
+      color: white;
+      border-radius: var(--radius-full);
+      font-size: 0.8125rem;
+      font-weight: 600;
+    }
+
+    .project-status.completed {
+      background: #22c55e;
+    }
+
+    /* Main gallery */
+    .project-gallery-main {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      margin-bottom: 1rem;
+    }
+
+    .project-gallery-main img {
+      width: 100%;
+      height: auto;
+      max-height: 70vh;
+      object-fit: contain;
+      display: block;
+      cursor: pointer;
+      transition: transform var(--transition-slow);
+    }
+
+    .project-gallery-main:hover img {
+      transform: scale(1.02);
+    }
+
+    /* Gallery navigation */
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3rem;
+      height: 3rem;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      z-index: 10;
+    }
+
+    .gallery-nav:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .gallery-nav.prev {
+      left: 1rem;
+    }
+
+    .gallery-nav.next {
+      right: 1rem;
+    }
+
+    /* Gallery info bar */
+    .gallery-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+    }
+
+    .image-counter {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9375rem;
+    }
+
+    .gallery-hint {
+      color: var(--text-muted);
+      font-size: 0.8125rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Thumbnails */
+    .project-gallery {
+      display: flex;
+      gap: 0.75rem;
+      overflow-x: auto;
+      padding: 0.5rem 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .project-gallery::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .project-gallery::-webkit-scrollbar-track {
+      background: var(--bg-card);
+      border-radius: 4px;
+    }
+
+    .project-gallery::-webkit-scrollbar-thumb {
+      background: var(--border-light);
+      border-radius: 4px;
+    }
+
+    .project-gallery::-webkit-scrollbar-thumb:hover {
+      background: var(--accent);
+    }
+
+    .project-gallery img {
+      flex: 0 0 auto;
+      width: 100px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      border: 2px solid transparent;
+      cursor: pointer;
+      scroll-snap-align: start;
+      transition: all var(--transition-fast);
+      opacity: 0.6;
+    }
+
+    .project-gallery img:hover {
+      opacity: 1;
+      border-color: var(--border-light);
+    }
+
+    .project-gallery img.active {
+      opacity: 1;
+      border-color: var(--accent);
       transform: scale(1.05);
     }
-    .navbar ul { list-style: none; display: flex; gap: 2rem; }
-    .navbar li a {
-      color: #fff; font-weight: 600;
-      transition: color var(--tr), border-bottom var(--tr);
-    }
-    .navbar li a:hover,
-    .navbar li a.active {
-      color: var(--highlight); border-bottom: 2px solid var(--highlight);
-    }
-    .hamburger {
-      display: none; position: absolute; top: 1rem; right: 1rem;
-      background: #000; color: #fff; padding: 0.25rem 0.35rem;
-      border: none; border-radius: var(--radius);
-      font-size: 1.5rem; cursor: pointer; z-index: 1001;
-    }
-    @media (max-width: 992px) {
-      .hamburger { display: block; }
-      .navbar .container.menu ul { display: none; }
-      .navbar .container.menu.active {
-        flex-direction: column; align-items: flex-start;
-        background: #000; position: absolute;
-        top: 100%; right: 0; width: 80%; padding: 1rem;
-        justify-content: flex-start;
-      }
-      .navbar .container.menu.active .navbar-brand { 
-        position: static; margin-bottom: 1rem; 
-      }
-      .navbar .container.menu.active ul {
-        display: flex; flex-direction: column; width: 100%; padding: 0;
-      }
-      .navbar .container.menu.active ul li { width: 100%; }
-      .navbar .container.menu.active ul li a {
-        display: block; padding: 0.5rem 0; color: #fff; border: none;
-        border-bottom: 1px solid #333;
-      }
-    }
 
-    /* ===== BACK BUTTON ===== */
-    .back-button-container {
-      width: 90%; max-width: 1200px; margin: 1rem auto 0; text-align: left;
-    }
-    .back-button {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 40px; height: 40px;
-      background: var(--highlight); color: #fff;
-      border-radius: 50%; font-size: 1.2rem;
-      transition: transform var(--tr), background var(--tr);
-    }
-    .back-button:hover { transform: scale(1.1); background: #e65a00; }
-    .back-button i { margin: 0; }
-
-    /* ===== MAIN CONTENT ===== */
-    .container {
-      width: 90%; max-width: 1200px; margin: 2rem auto; text-align: center;
-    }
-    #project-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem; font-weight: 700;
-      color: var(--highlight);
-      margin: 1.5rem 0 0.5rem;
-    }
-    .project-gallery-main {
-      overflow: hidden; margin: 1.5rem 0; border-radius: var(--radius);
-    }
-    .project-gallery-main img {
-      width: 100%; height: auto; object-fit: contain;
-    }
-    .project-gallery {
-      display: flex; gap: 1rem;
-      overflow-x: auto; padding: 1rem 0;
-      scroll-snap-type: x mandatory; justify-content: center;
-    }
-    .project-gallery img {
-      flex: 0 0 auto; scroll-snap-align: start;
-      width: 150px; height: 100px; object-fit: cover;
-      border-radius: 4px; border: 2px solid transparent;
-      transition: transform .2s, border .2s; cursor: pointer;
-    }
-    .project-gallery img:hover,
-    .project-gallery img.active {
-      transform: scale(1.05); border-color: var(--highlight);
-    }
-
-    /* ===== DETAILS ===== */
+    /* Project details section */
     .project-details-section {
-      max-width: 1200px; margin: 2rem auto; text-align: center;
+      margin-top: 3rem;
     }
+
     .section-title {
-      font-size: 1.5rem; font-weight: 600;
-      margin-bottom: 1rem; display: inline-block;
-      border-bottom: 3px solid var(--highlight);
-      padding-bottom: 0.25rem;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
     }
-    .project-info {
-      display: grid; grid-template-columns: 1fr 2fr;
-      gap: 2rem; margin-top: 1rem; text-align: left;
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
     }
+
+    /* Info grid */
+    .project-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1.5rem;
+    }
+
     .project-info-left,
     .project-info-right {
-      background: #fff; padding: 1rem; border-radius: var(--radius);
-      box-shadow: 0 2px 6px var(--shadow);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
     }
+
     .info-heading {
-      font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;
-      background: #f0f0f0; padding: 0.5rem 1rem;
-      border-radius: var(--radius); display: inline-block;
-    }
-    .info-row {
-      display: flex; justify-content: space-between;
-      margin-bottom: 0.75rem;
-    }
-    .info-label { font-weight: 700; }
-    .info-value { color: var(--text); }
-    @media (max-width: 768px) {
-      .project-info { grid-template-columns: 1fr !important; }
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+      padding: 0.625rem 1rem;
+      background: rgba(255, 102, 0, 0.1);
+      border: 1px solid rgba(255, 102, 0, 0.2);
+      border-radius: var(--radius-sm);
+      display: inline-block;
     }
 
-    /* ===== LIGHTBOX ===== */
-/* ===== LIGHTBOX (широк fullscreen, но с място за стрелките) ===== */
-#lightbox-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 0 3rem;       /* отстъп от ляво и дясно за стрелките */
-  box-sizing: border-box;
-  z-index: 2000;
-}
-
-#lightbox-modal img {
-  max-width: 100%;                       /* запълва целия наличен контейнер */
-  max-height: calc(100vh - 4rem);        /* малко отстъп отгоре/отдолу */
-  border-radius: 4px;
-}
-
-
-
-    #lightbox-modal .close-btn {
-      position: absolute; top: 1rem; right: 1rem;
-      font-size: 2rem; color: #fff; background: none; border: none; cursor: pointer;
-    }
-    /* navigation arrows */
-    #lightbox-modal .nav-arrow {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      font-size: 2rem; color: #fff; background: rgba(0,0,0,0.4);
-      border: none; padding: 0.5rem; border-radius: 50%;
-      cursor: pointer;
-    }
-    #lightbox-modal .nav-prev { left: 1rem; }
-    #lightbox-modal .nav-next { right: 1rem; }
-/* ===== LIGHTBOX IMAGE WRAPPER ===== */
-#lightbox-modal .img-wrapper {
-  position: relative;                  /* за absolute контроли */
-  max-width: 100%;
-  max-height: calc(100vh - 4rem);      /* 4rem за стрелки и close бутона */
-  overflow: hidden;                    /* скрива overflow при drag */
-  cursor: grab;
-}
-
-/* ===== ZOOM CONTROLS (горен център) ===== */
-#lightbox-modal .img-wrapper .zoom-controls {
-  position: absolute;
-  top: 1rem;          /* отстояние от горния край на изображението */
-  left: 50%;          /* центриране по хоризонтала */
-  transform: translateX(-50%);
-  display: flex;
-  gap: 1rem;
-  z-index: 2100;      /* над снимката, под стрелките и close бутона */
-}
-
-/* ===== ZOOM BUTTONS ===== */
-#lightbox-modal .zoom-btn {
-  background: rgba(255,255,255,0.8);
-  border: none;
-  font-size: 1.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  cursor: pointer;
-  user-select: none;
-}
-#lightbox-modal .zoom-btn:active {
-  background: rgba(255,255,255,1);
-}
-
-
-    /* ===== BACK TO TOP ===== */
-    #back-to-top {
-      position: fixed; bottom: 2rem; right: 2rem;
-      background: var(--highlight); color: #fff;
-      border: none; border-radius: 50%;
-      width: 3rem; height: 3rem; font-size: 1.5rem;
-      display: none; align-items: center; justify-content: center;
-      cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      z-index: 1002;
-    }
-    /* Footer icon colors */
-    #footer-contacts p i {
-      color: #555 !important;
+    .info-heading i {
       margin-right: 0.5rem;
-    }
-    #footer-contacts .footer-social a i {
-      color: #fff !important;
-    }
-    .footer-container i { color: var(--highlight); }
-
-    /* 1. Main image → пълен размер без crop */
-    .project-gallery-main {
-      height: auto !important;
-      overflow: visible !important;
-    }
-    .project-gallery-main img {
-      width: 100% !important;
-      height: auto !important;
-      object-fit: contain !important;
+      color: var(--accent);
     }
 
-    /* 2. Thumbnail gallery → винаги хоризонтален scroll */
-    .project-gallery {
-      display: flex !important;
-      flex-wrap: nowrap !important;
-      overflow-x: auto !important;
-      overflow-y: hidden !important;
-      white-space: nowrap !important;
-      scroll-snap-type: x mandatory !important;
-      -webkit-overflow-scrolling: touch !important;
-      padding: 0 1rem !important;
-      margin: 0 -1rem !important;
-    }
-    .project-gallery img {
-      flex: 0 0 auto !important;
-      scroll-snap-align: start !important;
-    }
-    .project-gallery {
-      justify-content: flex-start !important;
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0.875rem 0;
+      border-bottom: 1px solid var(--border-subtle);
     }
 
-    /* ———————————————
-       Modern animations (slow)
-       ——————————————— */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideInLeft {
-      from { opacity: 0; transform: translateX(-30px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes slideInRight {
-      from { opacity: 0; transform: translateX(30px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-    .animate-fade-up {
-      opacity: 0;
-      animation: fadeUp 1.5s ease-out forwards;
-    }
-    .animate-slide-left {
-      opacity: 0;
-      animation: slideInLeft 1.5s ease-out forwards;
-    }
-    .animate-slide-right {
-      opacity: 0;
-      animation: slideInRight 1.5s ease-out forwards;
+    .info-row:last-child {
+      border-bottom: none;
     }
 
-    /* ———————————————
-       Scroll-triggered animations
-       ——————————————— */
-    .animate-fade-up,
-    .animate-slide-left,
-    .animate-slide-right {
-      opacity: 0;
-      animation-play-state: paused;
+    .info-label {
+      font-weight: 500;
+      color: var(--text-muted);
+      font-size: 0.875rem;
     }
-    .visible {
-      opacity: 1;
-      animation-play-state: running;
+
+    .info-value {
+      color: var(--text-primary);
+      font-size: 0.9375rem;
+      text-align: right;
+      max-width: 60%;
     }
-/* Скриваме Zoom In/Out бутоните на мобилни устройства */
-@media (max-width: 768px) {
-  #lightbox-modal .zoom-controls {
-    display: none !important;
-  }
-}
 
-/* ===== IMAGE LOADING STATES ===== */
-.image-loading {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  display: flex; align-items: center; justify-content: center;
-  background: #f0f0f0; color: var(--highlight);
-  font-size: 2rem;
-}
-.project-gallery-main {
-  position: relative;
-  min-height: 300px;
-}
+    /* Description section */
+    .description-content {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-size: 0.9375rem;
+    }
 
-/* ===== GALLERY INFO ===== */
-.gallery-info {
-  display: flex; justify-content: space-between; align-items: center;
-  margin: 1rem 0; padding: 0.5rem;
-  background: rgba(0,0,0,0.05); border-radius: 4px;
-  font-size: 0.9rem; color: var(--clr-gray);
-}
-.image-counter {
-  font-weight: 600; color: var(--highlight);
-}
-.gallery-hint {
-  font-style: italic;
-}
+    .description-content p {
+      margin-bottom: 1rem;
+    }
 
-/* ===== LIGHTBOX COUNTERS & HINTS ===== */
-.lightbox-counter {
-  position: absolute; top: 3rem; left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.7); color: #fff;
-  padding: 0.5rem 1rem; border-radius: 20px;
-  font-size: 0.9rem; font-weight: 600;
-  z-index: 2200;
-}
-.lightbox-hint {
-  position: absolute; bottom: 1rem; left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.7); color: #fff;
-  padding: 0.5rem 1rem; border-radius: 20px;
-  font-size: 0.8rem; text-align: center;
-  z-index: 2200; opacity: 0.8;
-}
+    /* Features list */
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-@media (max-width: 768px) {
-  .gallery-hint, .lightbox-hint {
-    display: none;
-  }
-}
+    .features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border-subtle);
+    }
 
+    .features-list li:last-child {
+      border-bottom: none;
+    }
+
+    .features-list li i {
+      color: var(--accent);
+      margin-top: 0.25rem;
+    }
+
+    /* Lightbox */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      z-index: 2001;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-full);
+      transition: all var(--transition-fast);
+    }
+
+    .lightbox-close:hover {
+      background: var(--accent);
+      transform: scale(1.1);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3.5rem;
+      height: 3.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-full);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      font-size: 1.25rem;
+    }
+
+    .lightbox-nav:hover {
+      background: var(--accent);
+    }
+
+    .lightbox-nav.prev {
+      left: 2rem;
+    }
+
+    .lightbox-nav.next {
+      right: 2rem;
+    }
+
+    #lightbox-img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 0.875rem;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-full);
+    }
+
+    /* Loading state */
+    .loading-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
+      color: var(--text-muted);
+    }
+
+    .loading-spinner {
+      width: 3rem;
+      height: 3rem;
+      border: 3px solid var(--border-subtle);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Error state */
+    .error-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .error-state i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0.3;
+    }
+
+    .error-state h3 {
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Back to top */
+    #back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 3rem;
+      height: 3rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: var(--radius-full);
+      font-size: 1.25rem;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-base);
+      z-index: 999;
+    }
+
+    #back-to-top:hover {
+      background: var(--accent-dark);
+      transform: translateY(-4px);
+    }
+
+    @media (max-width: 992px) {
+      .project-info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-container {
+        padding-top: 5rem;
+      }
+
+      .gallery-nav {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      .gallery-nav.prev {
+        left: 0.5rem;
+      }
+
+      .gallery-nav.next {
+        right: 0.5rem;
+      }
+
+      .project-gallery img {
+        width: 80px;
+        height: 55px;
+      }
+
+      .lightbox-nav {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      .lightbox-nav.prev {
+        left: 0.5rem;
+      }
+
+      .lightbox-nav.next {
+        right: 0.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -405,84 +541,159 @@
     <nav class="navbar" role="navigation" aria-label="Главна навигация">
       <div class="container menu">
         <div class="navbar-brand">
-          <img src="https://i.ibb.co/spB6b5Mc/Untitled-design-4.png" alt="КТ СТРОЙ КОНСУЛТ" class="navbar-logo">
+          <a href="index.html">
+            <img src="https://i.ibb.co/spB6b5Mc/Untitled-design-4.png" alt="КТ СТРОЙ КОНСУЛТ" class="navbar-logo">
+          </a>
         </div>
-        <button class="hamburger" aria-label="Меню"><i class="fas fa-bars"></i></button>
         <ul>
           <li><a href="index.html#home">Начало</a></li>
           <li><a href="index.html#services">Услуги</a></li>
           <li><a href="index.html#projects" class="active">Проекти</a></li>
           <li><a href="index.html#about">За нас</a></li>
-          <li><a href="index.html#why-choose-us">Защо да изберете нас</a></li>
+          <li><a href="index.html#why-choose-us">Защо нас</a></li>
           <li><a href="index.html#partners">Партньори</a></li>
           <li><a href="index.html#clients">Клиенти</a></li>
           <li><a href="index.html#contact">Контакт</a></li>
         </ul>
+        <button class="hamburger" aria-label="Меню"><i class="fas fa-bars"></i></button>
       </div>
     </nav>
   </header>
 
   <!-- MAIN CONTENT -->
-  <main class="container">
-    <div id="back-button-placeholder"></div>
-    <h1 id="project-title"></h1>
-
-    <div class="project-gallery-main">
-      <div class="image-loading" id="mainImageLoading">
-        <i class="fas fa-spinner fa-spin"></i>
+  <main class="page-container">
+    <div class="container">
+      <!-- Back button -->
+      <div class="back-button-container">
+        <a href="#" id="backButton" class="back-button">
+          <i class="fas fa-arrow-left"></i>
+          <span>Назад към проекти</span>
+        </a>
       </div>
-      <a id="main-link"><img id="project-main-image" alt="" loading="lazy" style="display: none;"></a>
-    </div>
-    <div class="gallery-info">
-      <span class="image-counter" id="imageCounter">1 от 1</span>
-      <span class="gallery-hint">Кликнете за увеличаване</span>
-    </div>
-    <div class="project-gallery"></div>
 
-    <section class="project-details-section">
-      <h2 class="section-title">За проекта</h2>
-      <div class="project-info">
-        <div class="project-info-left">
-          <h3 class="info-heading">Информация</h3>
-          <div id="project-info-left"></div>
+      <!-- Loading state -->
+      <div id="loadingState" class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>Зареждане на проекта...</p>
+      </div>
+
+      <!-- Error state -->
+      <div id="errorState" class="error-state" style="display: none;">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h3>Проектът не е намерен</h3>
+        <p>Моля, върнете се към списъка с проекти</p>
+        <a href="index.html#projects" class="btn" style="margin-top: 1rem;">
+          Към проекти
+        </a>
+      </div>
+
+      <!-- Project content (hidden until loaded) -->
+      <div id="projectContent" style="display: none;">
+        <!-- Project header -->
+        <div class="project-header">
+          <h1 id="project-title"></h1>
+          <span id="projectStatus" class="project-status">
+            <i class="fas fa-hammer"></i>
+            <span id="statusText">В изпълнение</span>
+          </span>
         </div>
-        <div class="project-info-right">
-          <h3 class="info-heading">Описание</h3>
-          <div id="project-info-right"></div>
+
+        <!-- Main gallery -->
+        <div class="project-gallery-main">
+          <img id="mainImage" src="" alt="Основно изображение" />
+          <button class="gallery-nav prev" id="prevBtn" aria-label="Предишна снимка">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="gallery-nav next" id="nextBtn" aria-label="Следваща снимка">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Gallery info -->
+        <div class="gallery-info">
+          <span class="image-counter">
+            <span id="currentImage">1</span> / <span id="totalImages">1</span>
+          </span>
+          <span class="gallery-hint">
+            <i class="fas fa-hand-pointer"></i>
+            Кликнете за увеличен изглед
+          </span>
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="project-gallery" id="thumbnails"></div>
+
+        <!-- Project details -->
+        <div class="project-details-section">
+          <h2 class="section-title">
+            <i class="fas fa-info-circle" style="color: var(--accent); margin-right: 0.5rem;"></i>
+            Детайли за проекта
+          </h2>
+
+          <div class="project-info-grid">
+            <div class="project-info-left">
+              <div class="info-heading">
+                <i class="fas fa-clipboard-list"></i>
+                Основна информация
+              </div>
+              <div class="info-row">
+                <span class="info-label">Локация</span>
+                <span class="info-value" id="projectLocation">-</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Категория</span>
+                <span class="info-value" id="projectCategory">-</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Статус</span>
+                <span class="info-value" id="projectStatusText">-</span>
+              </div>
+              <div class="info-row" id="yearRow" style="display: none;">
+                <span class="info-label">Година</span>
+                <span class="info-value" id="projectYear">-</span>
+              </div>
+            </div>
+
+            <div class="project-info-right">
+              <div class="info-heading">
+                <i class="fas fa-file-alt"></i>
+                Описание
+              </div>
+              <div class="description-content" id="projectDescription">
+                <p>Няма налично описание за този проект.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <!-- Lightbox -->
- <!-- Lightbox -->
-<div id="lightbox-modal" aria-hidden="true">
-  <button class="close-btn" aria-label="Затвори">&times;</button>
-  <button class="nav-arrow nav-prev" aria-label="Предишна">
-    <i class="fas fa-chevron-left"></i>
-  </button>
-  <button class="nav-arrow nav-next" aria-label="Следваща">
-    <i class="fas fa-chevron-right"></i>
-  </button>
-
-  <div class="img-wrapper">
-    <div class="zoom-controls">
-      <button class="zoom-btn zoom-in"  aria-label="Уголеми">+</button>
-      <button class="zoom-btn zoom-out" aria-label="Умалии">−</button>
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true">
+    <span class="lightbox-close" aria-label="Затвори">
+      <i class="fas fa-times"></i>
+    </span>
+    <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Предишна снимка">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <img id="lightbox-img" src="" alt="Голям изглед" />
+    <button class="lightbox-nav next" id="lightboxNext" aria-label="Следваща снимка">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    <div class="lightbox-counter">
+      <span id="lightboxCurrent">1</span> / <span id="lightboxTotal">1</span>
     </div>
-    <div class="lightbox-counter" id="lightboxCounter">1 от 1</div>
-    <div class="lightbox-hint">Използвайте стрелките ← → или swipe за навигация</div>
-    <img src="" alt="">
   </div>
-</div>
 
-
-  <!-- Back to top -->
-  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <!-- BACK TO TOP -->
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
   <!-- FOOTER -->
   <footer id="footer-contacts">
-    <div class="container/footer-container">
+    <div class="footer-container">
       <h3>Контакти</h3>
       <p><i class="fas fa-phone"></i><a href="tel:+359883481292">+359 883 481 292</a></p>
       <p><i class="fas fa-envelope"></i><a href="mailto:y.aleksiev@ktstroyconsult.com">y.aleksiev@ktstroyconsult.com</a></p>
@@ -490,293 +701,230 @@
       <div class="footer-social">
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       </div>
-      <p>Проект и дизайн © 2025 КТ СТРОЙ КОНСУЛТ ЕООД. Всички права запазени.</p>
+      <p style="margin-top: 1.5rem; font-size: 0.8125rem; color: var(--text-muted);">© 2025 КТ СТРОЙ КОНСУЛТ ЕООД. Всички права запазени.</p>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script>
-    (function(){
-      const params = new URLSearchParams(location.search);
-      const slug   = params.get('slug');
-      if(!slug){ document.body.innerHTML = '<p>Няма избран проект.</p>'; return; }
-      const status = params.get('status') === 'completed' ? 'completed' : 'in-progress';
-      const dataFile = status === 'completed'
-        ? 'data/projects-completed.json'
-        : 'data/projects-in-progress.json';
+    // Hamburger toggle
+    const ham = document.querySelector('.hamburger');
+    const menu = document.querySelector('.container.menu');
+    ham.addEventListener('click', () => menu.classList.toggle('active'));
 
-      // back button
-      const ph = document.getElementById('back-button-placeholder');
-      const bc = document.createElement('div'); bc.className = 'back-button-container';
-      const ba = document.createElement('a'); ba.className = 'back-button';
-      ba.href = status === 'completed' ? 'completed.html' : 'in-progress.html';
-      ba.innerHTML = '<i class="fas fa-arrow-left"></i>';
-      bc.appendChild(ba); ph.replaceWith(bc);
+    document.querySelectorAll('.container.menu ul li a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
+      });
+    });
 
-      // fetch data
-      fetch(dataFile).then(r => r.json()).then(list => {
-        const p = list.find(o => o.slug === slug);
-        if(!p){ document.body.innerHTML = '<p>Проектът не е намерен.</p>'; return; }
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !ham.contains(e.target)) {
+        menu.classList.remove('active');
+      }
+    });
 
-        let currentIndex = 0;
+    // Back to top button
+    const backBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backBtn.style.display = window.pageYOffset > 300 ? 'flex' : 'none';
+    });
+    backBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-        const titleEl = document.getElementById('project-title');
-        titleEl.textContent = p.title;
-        titleEl.classList.add('animate-fade-up','visible');
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get('slug');
+    const status = urlParams.get('status');
 
-        const mainImg  = document.getElementById('project-main-image');
-        const mainLink = document.getElementById('main-link');
-        const lightbox = document.getElementById('lightbox-modal');
-        const lbImg    = lightbox.querySelector('img');
+    // Set back button URL
+    const backButton = document.getElementById('backButton');
+    if (status === 'completed') {
+      backButton.href = 'completed.html';
+    } else {
+      backButton.href = 'in-progress.html';
+    }
 
-        function showInLightbox(idx) {
-          currentIndex = (idx + p.gallery.length) % p.gallery.length;
-          lbImg.src = p.gallery[currentIndex];
-          // Update lightbox counter
-          document.getElementById('lightboxCounter').textContent = 
-            `${currentIndex + 1} от ${p.gallery.length}`;
+    // Determine which JSON file to fetch
+    const jsonFile = status === 'completed' 
+      ? 'data/projects-completed.json' 
+      : 'data/projects-in-progress.json';
+
+    // Gallery state
+    let currentImageIndex = 0;
+    let images = [];
+
+    // Elements
+    const loadingState = document.getElementById('loadingState');
+    const errorState = document.getElementById('errorState');
+    const projectContent = document.getElementById('projectContent');
+    const mainImage = document.getElementById('mainImage');
+    const thumbnails = document.getElementById('thumbnails');
+    const currentImageEl = document.getElementById('currentImage');
+    const totalImagesEl = document.getElementById('totalImages');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    // Lightbox elements
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    const lightboxCurrent = document.getElementById('lightboxCurrent');
+    const lightboxTotal = document.getElementById('lightboxTotal');
+
+    // Update gallery display
+    function updateGallery() {
+      mainImage.src = images[currentImageIndex];
+      currentImageEl.textContent = currentImageIndex + 1;
+      lightboxCurrent.textContent = currentImageIndex + 1;
+
+      // Update thumbnail active state
+      document.querySelectorAll('.project-gallery img').forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentImageIndex);
+      });
+    }
+
+    // Navigation functions
+    function goToPrev() {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      updateGallery();
+    }
+
+    function goToNext() {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      updateGallery();
+    }
+
+    // Event listeners for navigation
+    prevBtn.addEventListener('click', goToPrev);
+    nextBtn.addEventListener('click', goToNext);
+
+    // Lightbox controls
+    mainImage.addEventListener('click', () => {
+      lightboxImg.src = images[currentImageIndex];
+      lightboxModal.classList.add('active');
+      lightboxModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    });
+
+    lightboxClose.addEventListener('click', () => {
+      lightboxModal.classList.remove('active');
+      lightboxModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+
+    lightboxPrev.addEventListener('click', () => {
+      goToPrev();
+      lightboxImg.src = images[currentImageIndex];
+    });
+
+    lightboxNext.addEventListener('click', () => {
+      goToNext();
+      lightboxImg.src = images[currentImageIndex];
+    });
+
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) {
+        lightboxModal.classList.remove('active');
+        lightboxModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (lightboxModal.classList.contains('active')) {
+        if (e.key === 'ArrowLeft') goToPrev();
+        if (e.key === 'ArrowRight') goToNext();
+        if (e.key === 'Escape') {
+          lightboxModal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+        lightboxImg.src = images[currentImageIndex];
+      }
+    });
+
+    // Fetch and display project
+    fetch(jsonFile)
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+      })
+      .then(projects => {
+        const project = projects.find(p => p.slug === slug);
+
+        if (!project) {
+          loadingState.style.display = 'none';
+          errorState.style.display = 'block';
+          return;
         }
 
-        function updateImageCounter() {
-          document.getElementById('imageCounter').textContent = 
-            `${currentIndex + 1} от ${p.gallery.length}`;
+        // Update page title
+        document.title = `${project.title} | КТ СТРОЙ КОНСУЛТ`;
+
+        // Populate project data
+        document.getElementById('project-title').textContent = project.title;
+        document.getElementById('projectLocation').textContent = project.location;
+        document.getElementById('projectCategory').textContent = project.category;
+
+        // Update status
+        const statusEl = document.getElementById('projectStatus');
+        const statusTextEl = document.getElementById('statusText');
+        const projectStatusText = document.getElementById('projectStatusText');
+
+        if (status === 'completed') {
+          statusEl.classList.add('completed');
+          statusEl.innerHTML = '<i class="fas fa-check-circle"></i> <span>Завършен</span>';
+          projectStatusText.textContent = 'Завършен';
+        } else {
+          statusTextEl.textContent = 'В изпълнение';
+          projectStatusText.textContent = 'В изпълнение';
         }
 
-        // Handle main image loading
-        const loadingIndicator = document.getElementById('mainImageLoading');
-        mainImg.onload = () => {
-          loadingIndicator.style.display = 'none';
-          mainImg.style.display = 'block';
-          updateImageCounter();
-        };
-        mainImg.onerror = () => {
-          loadingIndicator.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
-          setTimeout(() => {
-            loadingIndicator.style.display = 'none';
-            mainImg.style.display = 'block';
-          }, 2000);
-        };
+        // Year (if available)
+        if (project.year) {
+          document.getElementById('yearRow').style.display = 'flex';
+          document.getElementById('projectYear').textContent = project.year;
+        }
 
-        mainImg.src    = p.gallery[0];
-        mainImg.alt    = p.title;
-        mainLink.href  = p.gallery[0];
-        document.querySelector('.project-gallery-main')
-          .classList.add('animate-slide-left','visible');
+        // Description
+        if (project.description) {
+          document.getElementById('projectDescription').innerHTML = `<p>${project.description}</p>`;
+        }
 
-        const gallery = document.querySelector('.project-gallery');
-        gallery.innerHTML = '';
-        p.gallery.forEach((src,i) => {
+        // Set up images
+        images = project.images || [project.thumb];
+        totalImagesEl.textContent = images.length;
+        lightboxTotal.textContent = images.length;
+        mainImage.src = images[0];
+
+        // Create thumbnails
+        images.forEach((img, index) => {
           const thumb = document.createElement('img');
-          thumb.src     = src;
-          thumb.alt     = p.title;
+          thumb.src = img;
+          thumb.alt = `Изображение ${index + 1}`;
           thumb.loading = 'lazy';
-          if(i === 0) thumb.classList.add('active');
-          thumb.addEventListener('click', ()=> {
-            loadingIndicator.style.display = 'flex';
-            mainImg.style.display = 'none';
-            mainImg.onload = () => {
-              loadingIndicator.style.display = 'none';
-              mainImg.style.display = 'block';
-            };
-            currentIndex = i;
-            mainImg.src   = src;
-            mainLink.href = src;
-            gallery.querySelectorAll('img').forEach(im => im.classList.remove('active'));
-            thumb.classList.add('active');
-            updateImageCounter();
+          if (index === 0) thumb.classList.add('active');
+          thumb.addEventListener('click', () => {
+            currentImageIndex = index;
+            updateGallery();
           });
-          gallery.appendChild(thumb);
-        });
-        gallery.classList.add('animate-slide-right','visible');
-
-        const left = document.getElementById('project-info-left');
-        left.innerHTML = 
-          `<div class="info-row">
-             <span class="info-label">Локация</span>
-             <span class="info-value">${p.location}</span>
-           </div>
-           <div class="info-row">
-             <span class="info-label">Категория</span>
-             <span class="info-value">${p.category}</span>
-           </div>`;
-        p.values.forEach(item => {
-          const row = document.createElement('div'); row.className = 'info-row';
-          row.innerHTML = 
-            `<span class="info-label">${item.label}</span>
-             <span class="info-value">${item.value}</span>`;
-          left.appendChild(row);
-        });
-        left.classList.add('animate-fade-up','visible');
-
-        const right = document.getElementById('project-info-right');
-        right.innerHTML = `<p>${p.description}</p>`;
-        right.classList.add('animate-fade-up','visible');
-
-      // open lightbox: отваря текущо заредената снимка
-mainLink.addEventListener('click', e => {
-  e.preventDefault();
-  showInLightbox(currentIndex);
-  lightbox.style.display = 'flex';
-});
-
-
-        // nav arrows
-        const prevBtn = lightbox.querySelector('.nav-prev');
-        const nextBtn = lightbox.querySelector('.nav-next');
-        prevBtn.addEventListener('click', ()=> showInLightbox(currentIndex - 1));
-        nextBtn.addEventListener('click', ()=> showInLightbox(currentIndex + 1));
-
-        // keyboard
-        window.addEventListener('keydown', e=>{
-          if (lightbox.style.display === 'flex') {
-            if (e.key === 'ArrowLeft') prevBtn.click();
-            if (e.key === 'ArrowRight') nextBtn.click();
-          }
+          thumbnails.appendChild(thumb);
         });
 
-        // touch swipe
-// touch swipe – само при един пръст и без zoom
-let startX = null;
-
-lbImg.addEventListener('touchstart', e => {
-  // ако има повече от един пръст или сме в zoom режим – не записваме стартова позиция
-  if (e.touches.length > 1 || currentScale > 1) {
-    startX = null;
-    return;
-  }
-  startX = e.touches[0].clientX;
-});
-
-lbImg.addEventListener('touchend', e => {
-  // ако не е имало валиден touchstart или има втори пръст при end – нищо не правим
-  if (startX === null || e.changedTouches.length > 1) {
-    startX = null;
-    return;
-  }
-  // изчисляваме разликата
-  const diff = e.changedTouches[0].clientX - startX;
-  // прагове за swipe (50px)
-  if (diff > 50) {
-    prevBtn.click();
-  } else if (diff < -50) {
-    nextBtn.click();
-  }
-  startX = null;
-});
-
+        // Show content
+        loadingState.style.display = 'none';
+        projectContent.style.display = 'block';
+      })
+      .catch(error => {
+        console.error('Error loading project:', error);
+        loadingState.style.display = 'none';
+        errorState.style.display = 'block';
       });
-  // ... съществуващ код за open lightbox и навигация (showInLightbox, стрелките)
-
-  // === START: Zoom & Drag логика ===
-  let currentScale = 1;
-  let minScale = 1;
-  let maxScale = 4;
-  let posX = 0, posY = 0;
-  let startX = 0, startY = 0;
-  let isDragging = false;
-
-  const wrapper    = document.querySelector('#lightbox-modal .img-wrapper');
-  const lbImg      = wrapper.querySelector('img');
-  const btnZoomIn  = document.querySelector('.zoom-in');
-  const btnZoomOut = document.querySelector('.zoom-out');
-
-  function updateTransform() {
-    lbImg.style.transform = `translate(${posX}px, ${posY}px) scale(${currentScale})`;
-  }
-
-  btnZoomIn.addEventListener('click', e => {
-    e.stopPropagation();
-    currentScale = Math.min(currentScale + 0.5, maxScale);
-    updateTransform();
-  });
-
-  btnZoomOut.addEventListener('click', e => {
-    e.stopPropagation();
-    currentScale = Math.max(currentScale - 0.5, minScale);
-    if (currentScale === 1) posX = posY = 0;
-    updateTransform();
-  });
-// === Drag/пан при задържане с превенция на нативно поведение ===
-wrapper.addEventListener('pointerdown', e => {
-  // Ако кликът е върху някой от zoom бутоните, не стартираме drag
-  if (e.target.closest('.zoom-controls')) return;
-
-  if (currentScale <= 1) return;
-  e.preventDefault();
-  isDragging = true;
-  wrapper.style.cursor = 'grabbing';
-  startX = e.clientX - posX;
-  startY = e.clientY - posY;
-  wrapper.setPointerCapture(e.pointerId);
-});
-
-
-wrapper.addEventListener('pointermove', e => {
-  if (!isDragging) return;
-  e.preventDefault();                // спира скрол или текст-маркиране
-  posX = e.clientX - startX;
-  posY = e.clientY - startY;
-  updateTransform();
-});
-
-wrapper.addEventListener('pointerup', e => {
-  if (!isDragging) return;
-  isDragging = false;
-  wrapper.style.cursor = 'grab';
-  wrapper.releasePointerCapture(e.pointerId);
-});
-
-
-      // mobile nav
-      const ham = document.querySelector('.hamburger');
-      const menu = document.querySelector('.container.menu');
-      ham.addEventListener('click', ()=> menu.classList.toggle('active'));
-      document.querySelectorAll('.container.menu ul li a').forEach(link => {
-        link.addEventListener('click', ()=> {
-          menu.classList.remove('active');
-          document.querySelectorAll('.container.menu ul li a').forEach(l => l.classList.remove('active'));
-          link.classList.add('active');
-        });
-      });
-
-      // back-to-top
-      const backBtn = document.getElementById('back-to-top');
-      window.addEventListener('scroll', ()=> {
-        backBtn.style.display = window.pageYOffset > 300 ? 'flex' : 'none';
-      });
-      backBtn.addEventListener('click', ()=> window.scrollTo({ top:0, behavior:'smooth' }));
-
-      // close lightbox
-      const lightbox = document.getElementById('lightbox-modal');
-      const lbClose  = lightbox.querySelector('.close-btn');
-      lbClose.addEventListener('click', ()=> lightbox.style.display = 'none');
-      window.addEventListener('keydown', e=> {
-        if(e.key === 'Escape') lightbox.style.display = 'none';
-      });
-      lightbox.addEventListener('click', e=> {
-        if(e.target === lightbox) lightbox.style.display = 'none';
-      });
-
-      // === Scroll-triggered animations ===
-      const scrollObserver = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      [
-        document.getElementById('project-title'),
-        document.querySelector('.project-gallery-main'),
-        document.querySelector('.project-gallery'),
-        document.querySelector('.project-info-left'),
-        document.querySelector('.project-info-right')
-      ].forEach(el => {
-        if (el) scrollObserver.observe(el);
-      });
-
-    })();
   </script>
 </body>
 </html>

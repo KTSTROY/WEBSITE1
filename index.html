@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="КТ СТРОЙ КОНСУЛТ ЕООД – Строим с внимание към детайла." />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#0a0a0a" />
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="строителство, ремонт, строителни услуги, фасади, КТ СТРОЙ, KT STROY, саниране, апартаменти, довършителни дейности" />
   <link rel="canonical" href="https://ktstroyconsult.com/" />
@@ -12,43 +12,28 @@
   <title>КТ СТРОЙ КОНСУЛТ ЕООД</title>
 
   <!-- Open Graph за социални мрежи -->
-<meta property="og:title" content="КТ СТРОЙ КОНСУЛТ ЕООД" />
-<meta property="og:description" content="Строим с внимание към детайла." />
-<meta property="og:image" content="https://ktstroyconsult.com/images/logo-og.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://ktstroyconsult.com/" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:title" content="КТ СТРОЙ КОНСУЛТ ЕООД" />
+  <meta property="og:description" content="Строим с внимание към детайла." />
+  <meta property="og:image" content="https://ktstroyconsult.com/images/logo-og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://ktstroyconsult.com/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-
-
-  <!-- Favicon (ако имаш) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts - Modern Stack -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- AOS Library CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Manifest за PWA -->
   <link rel="manifest" href="manifest.json" />
@@ -68,20 +53,22 @@
     <nav class="navbar" role="navigation" aria-label="Главна навигация">
       <div class="container menu">
         <div class="navbar-brand">
-          <img src="https://i.ibb.co/spB6b5Mc/Untitled-design-4.png" alt="КТ СТРОЙ КОНСУЛТ" class="navbar-logo">
+          <a href="#home">
+            <img src="https://i.ibb.co/spB6b5Mc/Untitled-design-4.png" alt="КТ СТРОЙ КОНСУЛТ" class="navbar-logo">
+          </a>
         </div>
         <ul>
           <li><a href="#home">Начало</a></li>
           <li><a href="#services">Услуги</a></li>
           <li><a href="#projects">Проекти</a></li>
           <li><a href="#about">За нас</a></li>
-          <li><a href="#why-choose-us">Защо да изберете нас</a></li>
+          <li><a href="#why-choose-us">Защо нас</a></li>
           <li><a href="#partners">Партньори</a></li>
           <li><a href="#clients">Клиенти</a></li>
           <li><a href="#contact">Контакт</a></li>
         </ul>
+        <button class="hamburger" aria-label="Меню"><i class="fas fa-bars"></i></button>
       </div>
-      <div class="hamburger" tabindex="0"><i class="fas fa-bars"></i></div>
     </nav>
   </header>
 
@@ -98,12 +85,15 @@
         <h1>Добре дошли в</h1>
         <h2>КТ СТРОЙ КОНСУЛТ ЕООД</h2>
         <p>Строим с внимание към детайла</p>
-        <a href="#services" class="btn">Научете повече</a>
+        <a href="#services" class="btn">
+          <span>Научете повече</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
     </section>
 
-        <!-- SERVICES -->
-    <section id="services" class="services-section alt-bg" data-aos="fade-up">
+    <!-- SERVICES -->
+    <section id="services" class="services-section" data-aos="fade-up">
       <div class="container">
         <h2>Нашите услуги</h2>
         <p class="section-subtitle">
@@ -116,62 +106,56 @@
               Консултантски услуги и управление на проекти
               <i class="fas fa-info-circle detail-icon" aria-label="Повече информация"></i>
             </h3>
-            <p id="consultant-desc">Ние предлагаме професионални консултациии управление на строителни проекти за инвеститори, фирми и частни клиенти. Помагаме Ви да взимате информирани решения, да избегнете скъпи грешки и да постигнете отлични резултати в рамките на планирания бюджет и срок.</p>
+            <p id="consultant-desc">Ние предлагаме професионални консултации и управление на строителни проекти за инвеститори, фирми и частни клиенти.</p>
           </div>
-          <div class="service-card" data-service="construction" data-aos="zoom-in" data-aos-delay="100">
+          <div class="service-card" data-service="construction" data-aos="zoom-in" data-aos-delay="100" tabindex="0" role="button">
             <i class="fas fa-hammer"></i>
             <h3>
               Цялостно строителство
               <i class="fas fa-info-circle detail-icon"></i>
             </h3>
-            <p>Предлагаме изпълнение на строителни обекти от нулев етап до въвеждане в експлоатация. Работим с доверени партньори, следим всяка фаза от процеса и гарантираме високо качество и прозрачност на строителния процес.</p>
+            <p>Предлагаме изпълнение на строителни обекти от нулев етап до въвеждане в експлоатация с високо качество.</p>
           </div>
-          <div class="service-card" data-service="renovation" data-aos="zoom-in" data-aos-delay="200">
+          <div class="service-card" data-service="renovation" data-aos="zoom-in" data-aos-delay="200" tabindex="0" role="button">
             <i class="fas fa-paint-roller"></i>
             <h3>
               Основни ремонти
               <i class="fas fa-info-circle detail-icon"></i>
             </h3>
-            <p>Извършваме пълни вътрешни и външни ремонти на апартаменти, къщи, офиси и търговски обекти. Подхождаме професионално към всеки проект - с точна организация, стриктен контрол и ясен график.</p>
+            <p>Извършваме пълни вътрешни и външни ремонти на апартаменти, къщи, офиси и търговски обекти.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SVG Separator -->
-    <div class="section-separator"></div>
-
     <!-- ПРОЕКТИ -->
-<section id="projects" class="projects-section" data-aos="fade-up">
-  <div class="container">
-    <h2>Наши проекти</h2>
-    <p class="section-subtitle">
-      Изберете категория и разгледайте нашите изпълнения и завършени проекти.
-    </p>
+    <section id="projects" class="projects-section" data-aos="fade-up">
+      <div class="container">
+        <h2>Наши проекти</h2>
+        <p class="section-subtitle">
+          Изберете категория и разгледайте нашите изпълнения и завършени проекти.
+        </p>
 
-    <div class="project-categories">
-      <!-- В ИЗПЪЛНЕНИЕ -->
-      <a href="in-progress.html"
-         class="project-category"
-         style="background-image: url('images/projects/in-progress/111.jpg')">
-        <div class="category-overlay"></div>
-        <h3>В ИЗПЪЛНЕНИЕ</h3>
-      </a>
+        <div class="project-categories">
+          <!-- В ИЗПЪЛНЕНИЕ -->
+          <a href="in-progress.html"
+             class="project-category"
+             style="background-image: url('images/projects/in-progress/111.jpg')">
+            <h3>В ИЗПЪЛНЕНИЕ</h3>
+          </a>
 
-      <!-- ЗАВЪРШЕНИ ПРОЕКТИ -->
-      <a href="completed.html"
-         class="project-category"
-         style="background-image: url('images/projects/completed/222.jpg')">
-        <div class="category-overlay"></div>
-        <h3>ЗАВЪРШЕНИ ПРОЕКТИ</h3>
-      </a>
-    </div>
-  </div>
-</section>
-
+          <!-- ЗАВЪРШЕНИ ПРОЕКТИ -->
+          <a href="completed.html"
+             class="project-category"
+             style="background-image: url('images/projects/completed/222.jpg')">
+            <h3>ЗАВЪРШЕНИ ПРОЕКТИ</h3>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- ABOUT -->
-    <section id="about" class="about-section alt-bg" data-aos="fade-up">
+    <section id="about" class="about-section" data-aos="fade-up">
       <div class="container">
         <h2>За нас</h2>
         <p class="section-subtitle">
@@ -180,7 +164,10 @@
         <div class="about-content">
           <div class="about-text">
             <p>
-              Въпреки че "КТ Строй Консулт" ЕООД е новосъздадена компания, нашият екип от специалисти притежава над 10 години професионален опит, натрупан при изпълнение на множество успешни проекти за големи инвеститори и водещи компании. Нашият Управител е ръководил изграждането на редица мащабни проекти, включително жилищни сгради, офис центрове, реконструкция и ремонт на съществуващи сгради, училища и др. Този опит е гаранция за успешната реализация на Вашия проект.
+              Въпреки че "КТ Строй Консулт" ЕООД е новосъздадена компания, нашият екип от специалисти притежава над 10 години професионален опит, натрупан при изпълнение на множество успешни проекти за големи инвеститори и водещи компании.
+            </p>
+            <p style="margin-top: 1rem;">
+              Нашият Управител е ръководил изграждането на редица мащабни проекти, включително жилищни сгради, офис центрове, реконструкция и ремонт на съществуващи сгради, училища и др. Този опит е гаранция за успешната реализация на Вашия проект.
             </p>
           </div>
           <div class="about-image-container">
@@ -229,7 +216,7 @@
     </section>
 
     <!-- PARTNERS -->
-    <section id="partners" class="partners-section alt-bg" data-aos="fade-up">
+    <section id="partners" class="partners-section" data-aos="fade-up">
       <div class="container">
         <h2>Партньори</h2>
         <p class="section-subtitle">
@@ -246,25 +233,25 @@
     </section>
 
     <!-- CLIENTS -->
-    <section id="clients" class="clients-section alt-bg" data-aos="fade-up">
+    <section id="clients" class="clients-section" data-aos="fade-up">
       <div class="container">
         <h2>Клиенти</h2>
         <p class="section-subtitle">Отзивите на нашите доволни клиенти потвърждават професионализма ни.</p>
         <div id="client-slider" class="slider">
           <div class="client-card active">
-            <p class="client-feedback">“Страхотно обслужване и изпълнение – проектът беше завършен точно както очаквахме.”</p>
+            <p class="client-feedback">"Страхотно обслужване и изпълнение – проектът беше завършен точно както очаквахме."</p>
             <p class="client-name">- Иван Петров</p>
           </div>
           <div class="client-card">
-            <p class="client-feedback">“Професионализъм до последния детайл. Препоръчвам КТ СТРОЙ КОНСУЛТ на всеки!”</p>
+            <p class="client-feedback">"Професионализъм до последния детайл. Препоръчвам КТ СТРОЙ КОНСУЛТ на всеки!"</p>
             <p class="client-name">- Мария Георгиева</p>
           </div>
           <div class="client-card">
-            <p class="client-feedback">“Високо качество и отлично обслужване. Много сме доволни!”</p>
+            <p class="client-feedback">"Високо качество и отлично обслужване. Много сме доволни!"</p>
             <p class="client-name">- Георги Димитров</p>
           </div>
           <div class="client-card">
-            <p class="client-feedback">“Екипът надмина очакванията ми по отношение на срокове и качество!”</p>
+            <p class="client-feedback">"Екипът надмина очакванията ми по отношение на срокове и качество!"</p>
             <p class="client-name">- Елена Иванова</p>
           </div>
         </div>
@@ -285,18 +272,18 @@
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Име *</label>
-                  <input type="text" id="name" name="name" required>
+                  <input type="text" id="name" name="name" required placeholder="Вашето име">
                   <span class="error-message" id="nameError"></span>
                 </div>
                 <div class="form-group">
                   <label for="email">Email *</label>
-                  <input type="email" id="email" name="email" required>
+                  <input type="email" id="email" name="email" required placeholder="email@example.com">
                   <span class="error-message" id="emailError"></span>
                 </div>
               </div>
               <div class="form-group">
                 <label for="phone">Телефон</label>
-                <input type="tel" id="phone" name="phone">
+                <input type="tel" id="phone" name="phone" placeholder="+359 XXX XXX XXX">
               </div>
               <div class="form-group">
                 <label for="subject">Тема</label>
@@ -376,7 +363,7 @@
       <div class="footer-social">
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       </div>
-      <p>Проект и дизайн © 2025 КТ СТРОЙ КОНСУЛТ ЕООД. Всички права запазени.</p>
+      <p style="margin-top: 1.5rem; font-size: 0.8125rem; color: var(--text-muted);">© 2025 КТ СТРОЙ КОНСУЛТ ЕООД. Всички права запазени.</p>
     </div>
   </footer>
 
@@ -398,17 +385,18 @@
   </div>
 
   <!-- BACK-TO-TOP -->
-  <button id="back-to-top" aria-label="Назад към началото">&#8679;</button>
+  <button id="back-to-top" aria-label="Назад към началото">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
   <!-- AOS JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
-    AOS.init({ duration: 1200, once: true, offset: 100 });
+    AOS.init({ duration: 1000, once: true, offset: 100 });
   </script>
 
   <!-- Основен JS -->
-  <!-- Основен JS – копирайте го изцяло и го заменете във вашия index.html преди </body> -->
-<script>
+  <script>
   // Hamburger toggle
   document.querySelector('.hamburger').addEventListener('click', () => {
     document.querySelector('.menu').classList.toggle('active');
@@ -533,16 +521,14 @@
     listEl.innerHTML    = data.items.map(i => `<li>${i}</li>`).join('');
     modal.style.display = 'block';
     modal.setAttribute('aria-hidden', 'false');
-    closeBtn.focus(); // Focus close button for keyboard users
+    closeBtn.focus();
   }
 
   document.querySelectorAll('.service-card').forEach(card => {
     card.style.cursor = 'pointer';
     
-    // Click event
     card.addEventListener('click', () => openServiceModal(card));
     
-    // Keyboard support
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -582,7 +568,7 @@
   const navLinks = document.querySelectorAll('.menu ul li a[href^="#"]');
   
   function updateActiveNav() {
-    const scrollPos = window.scrollY + 100; // offset for navbar
+    const scrollPos = window.scrollY + 100;
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
@@ -600,7 +586,7 @@
   }
   
   window.addEventListener('scroll', updateActiveNav);
-  updateActiveNav(); // Initial call
+  updateActiveNav();
 
   // Contact form handling
   const contactForm = document.getElementById('contactForm');
@@ -628,10 +614,8 @@
   function validateForm() {
     let isValid = true;
     
-    // Clear previous errors
     ['name', 'email', 'message'].forEach(clearError);
     
-    // Name validation
     const name = document.getElementById('name').value.trim();
     if (!name) {
       showError('name', 'Името е задължително поле');
@@ -641,7 +625,6 @@
       isValid = false;
     }
     
-    // Email validation
     const email = document.getElementById('email').value.trim();
     if (!email) {
       showError('email', 'Email адресът е задължителен');
@@ -651,7 +634,6 @@
       isValid = false;
     }
     
-    // Message validation
     const message = document.getElementById('message').value.trim();
     if (!message) {
       showError('message', 'Съобщението е задължително поле');
@@ -671,7 +653,6 @@
       return;
     }
     
-    // Show loading state
     const btnText = document.querySelector('.btn-text');
     const btnLoading = document.querySelector('.btn-loading');
     const submitBtn = contactForm.querySelector('button[type="submit"]');
@@ -680,15 +661,12 @@
     btnLoading.style.display = 'inline';
     submitBtn.disabled = true;
     
-    // Simulate form submission (replace with actual endpoint)
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate network delay
+      await new Promise(resolve => setTimeout(resolve, 2000));
       
-      // Show success message
       contactForm.style.display = 'none';
       formSuccess.style.display = 'block';
       
-      // Reset form after delay
       setTimeout(() => {
         contactForm.reset();
         contactForm.style.display = 'block';
@@ -699,7 +677,6 @@
       }, 5000);
       
     } catch (error) {
-      // Handle error
       alert('Възникна грешка при изпращане на съобщението. Моля опитайте отново.');
       btnText.style.display = 'inline';
       btnLoading.style.display = 'none';
@@ -722,8 +699,19 @@
     const message = document.getElementById('message').value.trim();
     if (message && message.length >= 10) clearError('message');
   });
-</script>
 
+  // Testimonial slider auto-rotation
+  const clientCards = document.querySelectorAll('.client-card');
+  let currentCard = 0;
+  
+  function rotateTestimonials() {
+    clientCards.forEach(card => card.classList.remove('active'));
+    currentCard = (currentCard + 1) % clientCards.length;
+    clientCards[currentCard].classList.add('active');
+  }
+  
+  setInterval(rotateTestimonials, 5000);
+</script>
 
   <!-- Service Worker -->
   <script src="service-worker.js"></script>
