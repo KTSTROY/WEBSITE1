@@ -868,15 +868,12 @@
         // Update status
         const statusEl = document.getElementById('projectStatus');
         const statusTextEl = document.getElementById('statusText');
-        const projectStatusText = document.getElementById('projectStatusText');
 
         if (status === 'completed') {
           statusEl.classList.add('completed');
           statusEl.innerHTML = '<i class="fas fa-check-circle"></i> <span>Завършен</span>';
-          projectStatusText.textContent = 'Завършен';
         } else {
           statusTextEl.textContent = 'В изпълнение';
-          projectStatusText.textContent = 'В изпълнение';
         }
 
         // Dynamic values from JSON (ЗП, РЗП, Инвеститор, Участие, etc.)
