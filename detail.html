@@ -896,8 +896,8 @@
           document.getElementById('projectDescription').innerHTML = `<p>${project.description}</p>`;
         }
 
-        // Set up images
-        images = project.images || [project.thumb];
+        // Set up images - use gallery array from JSON
+        images = project.gallery || project.images || [project.thumb];
         totalImagesEl.textContent = images.length;
         lightboxTotal.textContent = images.length;
         mainImage.src = images[0];
