@@ -13,29 +13,30 @@
 
 /* VARIABLES */
 :root {
-  /* Colors - Dark Luxurious Palette */
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #111111;
-  --bg-card: rgba(0, 0, 0, 0.8);
-  --bg-glass: rgba(255, 255, 255, 0.03);
-  --bg-glass-hover: rgba(255, 255, 255, 0.06);
+  /* Colors - Modern Warm Palette */
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-card: rgba(30, 41, 59, 0.85);
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --bg-glass-hover: rgba(255, 255, 255, 0.1);
   
-  --text-primary: #f5f5f5;
-  --text-secondary: #a3a3a3;
-  --text-muted: #737373;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
   
-  --accent: #ff6600;
-  --accent-dark: #cc5200;
-  --accent-glow: rgba(255, 102, 0, 0.3);
+  --accent: #ff7b00;
+  --accent-light: #ff9f40;
+  --accent-dark: #e65c00;
+  --accent-glow: rgba(255, 123, 0, 0.35);
   
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-light: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-light: rgba(255, 255, 255, 0.18);
   
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 40px rgba(255, 102, 0, 0.15);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 50px rgba(255, 123, 0, 0.2);
   
   /* Typography */
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -80,8 +81,9 @@ body::before {
   position: fixed;
   inset: 0;
   background: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 102, 0, 0.08), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(255, 102, 0, 0.05), transparent);
+    radial-gradient(ellipse 100% 80% at 50% -30%, rgba(255, 123, 0, 0.12), transparent 60%),
+    radial-gradient(ellipse 80% 60% at 100% 100%, rgba(99, 102, 241, 0.08), transparent 50%),
+    radial-gradient(ellipse 60% 50% at 0% 50%, rgba(255, 123, 0, 0.06), transparent 50%);
   pointer-events: none;
   z-index: -1;
 }
@@ -126,14 +128,14 @@ section {
 
 /* GLASS CARD BASE */
 .glass-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.85), rgba(22, 33, 62, 0.9));
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 
-    0 0 0 1px rgba(255, 255, 255, 0.05),
-    0 1px 1px -0.5px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 1px 1px -0.5px rgba(0, 0, 0, 0.2),
     var(--shadow-lg);
 }
 
@@ -194,12 +196,12 @@ section {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0.75rem 1.5rem;
-  background: rgba(0, 0, 0, 0.7);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(22, 33, 62, 0.95));
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-full);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .navbar-brand {
@@ -341,7 +343,7 @@ section {
   inset: 0;
   background: 
     url("https://i.ibb.co/Q7DMd2Cy/Leonardo-Kino-XL-Two-young-confident-construction-engineers-wi-1.jpg") center/cover no-repeat;
-  filter: brightness(0.5) saturate(0.9);
+  filter: brightness(0.6) saturate(1.1);
   z-index: -2;
 }
 
@@ -349,7 +351,7 @@ section {
   position: absolute;
   inset: 0;
   background: 
-    linear-gradient(to bottom, rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.2) 50%, rgba(10, 10, 10, 0.85));
+    linear-gradient(135deg, rgba(26, 26, 46, 0.7) 0%, rgba(22, 33, 62, 0.4) 50%, rgba(26, 26, 46, 0.85) 100%);
   z-index: -1;
 }
 
@@ -407,7 +409,7 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
   color: white;
   padding: 0.875rem 2rem;
   border: none;
@@ -418,21 +420,22 @@ section {
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 123, 0, 0.3);
 }
 
 .btn::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+  background: linear-gradient(135deg, rgba(255,255,255,0.25), transparent);
   opacity: 0;
   transition: opacity var(--transition-base);
 }
 
 .btn:hover {
-  background: var(--accent-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px var(--accent-glow);
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 123, 0, 0.4);
 }
 
 .btn:hover::before {
@@ -485,7 +488,7 @@ section {
 }
 
 .service-card {
-  background: var(--bg-card);
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(22, 33, 62, 0.95));
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 2rem;
@@ -503,15 +506,15 @@ section {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent), transparent);
+  background: linear-gradient(90deg, var(--accent), var(--accent-light), transparent);
   opacity: 0;
   transition: opacity var(--transition-base);
 }
 
 .service-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-light);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(255, 123, 0, 0.15);
 }
 
 .service-card:hover::before {
@@ -522,13 +525,14 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
   color: white;
   font-size: 1.25rem;
   border-radius: var(--radius-md);
   margin-bottom: 1.25rem;
+  box-shadow: 0 4px 15px rgba(255, 123, 0, 0.3);
 }
 
 .service-card h3 {
@@ -607,24 +611,24 @@ section {
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.25) 50%,
-    rgba(0, 0, 0, 0.1) 100%
+    rgba(26, 26, 46, 0.85) 0%,
+    rgba(22, 33, 62, 0.3) 50%,
+    rgba(22, 33, 62, 0.1) 100%
   );
   transition: background var(--transition-base);
 }
 
 .project-category:hover {
   transform: scale(1.02);
-  box-shadow: var(--shadow-glow);
+  box-shadow: var(--shadow-glow), 0 0 40px rgba(255, 123, 0, 0.2);
 }
 
 .project-category:hover::before {
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.35) 50%,
-    rgba(0, 0, 0, 0.15) 100%
+    rgba(26, 26, 46, 0.9) 0%,
+    rgba(255, 123, 0, 0.1) 50%,
+    rgba(22, 33, 62, 0.15) 100%
   );
 }
 
@@ -691,14 +695,14 @@ section {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-light);
 }
 
 .about-image-container::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, transparent 70%, rgba(255, 102, 0, 0.08));
+  background: linear-gradient(135deg, transparent 60%, rgba(255, 123, 0, 0.1));
   z-index: 1;
   pointer-events: none;
 }
@@ -735,7 +739,7 @@ section {
 }
 
 .why-item {
-  background: var(--bg-card);
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.85), rgba(22, 33, 62, 0.9));
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 2rem 1.5rem;
@@ -744,9 +748,9 @@ section {
 }
 
 .why-item:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-light);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md), 0 0 25px rgba(255, 123, 0, 0.12);
 }
 
 .why-item i {
@@ -777,11 +781,12 @@ section {
   justify-content: center;
   width: 1.75rem;
   height: 1.75rem;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
   color: white;
   font-size: 0.75rem;
   font-weight: 700;
   border-radius: var(--radius-full);
+  box-shadow: 0 2px 8px rgba(255, 123, 0, 0.3);
 }
 
 /* ============================================
@@ -797,8 +802,8 @@ section {
   gap: 2rem;
   align-items: center;
   margin-top: 3rem;
-  padding: 2rem;
-  background: var(--bg-card);
+  padding: 2.5rem;
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(22, 33, 62, 0.85));
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
 }
@@ -831,8 +836,8 @@ section {
 
 .slider .client-card {
   display: none;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(22, 33, 62, 0.95));
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   position: relative;
@@ -888,8 +893,8 @@ section {
 }
 
 .contact-form {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(22, 33, 62, 0.95));
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: 2rem;
 }
@@ -917,8 +922,8 @@ section {
 .form-group textarea {
   width: 100%;
   padding: 0.875rem 1rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
   font-family: inherit;
@@ -936,8 +941,8 @@ section {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--accent);
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 0 3px var(--accent-glow);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(255, 123, 0, 0.2);
 }
 
 .form-group input.error,
@@ -985,8 +990,8 @@ section {
 }
 
 .contact-info {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(22, 33, 62, 0.95));
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: 2rem;
 }
@@ -1042,8 +1047,8 @@ section {
    FOOTER
    ============================================ */
 footer {
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, var(--bg-secondary), rgba(22, 33, 62, 0.98));
+  border-top: 1px solid var(--border-light);
   padding: 3rem 0 2rem;
   margin-top: 2rem;
 }
@@ -1094,8 +1099,8 @@ footer i {
   justify-content: center;
   width: 44px;
   height: 44px;
-  background: var(--bg-glass);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-full);
   color: var(--text-primary);
   font-size: 1.125rem;
@@ -1104,9 +1109,10 @@ footer i {
 }
 
 .footer-social a:hover {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
   border-color: var(--accent);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(255, 123, 0, 0.3);
 }
 
 /* ============================================
@@ -1230,7 +1236,7 @@ footer i {
   right: 2rem;
   width: 3rem;
   height: 3rem;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
   color: white;
   border: none;
   border-radius: var(--radius-full);
@@ -1238,15 +1244,15 @@ footer i {
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 15px rgba(255, 123, 0, 0.35);
   transition: all var(--transition-base);
   z-index: 999;
 }
 
 #back-to-top:hover {
-  background: var(--accent-dark);
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
   transform: translateY(-4px);
-  box-shadow: var(--shadow-glow);
+  box-shadow: 0 8px 25px rgba(255, 123, 0, 0.45);
 }
 
 /* ============================================
