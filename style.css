@@ -183,9 +183,9 @@ section {
    ============================================ */
 .navbar {
   position: sticky;
-  top: 1rem;
+  top: calc(1.5rem + env(safe-area-inset-top, 0px));
   z-index: 1000;
-  padding: 0 1rem;
+  padding: 0 calc(1rem + env(safe-area-inset-right, 0px)) 0 calc(1rem + env(safe-area-inset-left, 0px));
 }
 
 .menu {
@@ -1056,7 +1056,7 @@ footer {
 .footer-container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 calc(1.5rem + env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) calc(1.5rem + env(safe-area-inset-left, 0px));
   text-align: center;
 }
 
@@ -1288,8 +1288,8 @@ footer i {
 #back-to-top {
   display: none;
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+  right: calc(2rem + env(safe-area-inset-right, 0px));
   width: 3rem;
   height: 3rem;
   background: linear-gradient(135deg, var(--accent), var(--accent-light));
