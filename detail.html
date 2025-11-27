@@ -802,28 +802,11 @@
     prevBtn.addEventListener('click', goToPrev);
     nextBtn.addEventListener('click', goToNext);
 
-    // Lightbox controls
-    mainImage.addEventListener('click', () => {
-      lightboxImg.src = images[currentImageIndex];
-      lightboxModal.classList.add('active');
-      lightboxModal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    });
-
+    // Lightbox controls - close handlers (can be set up early)
     lightboxClose.addEventListener('click', () => {
       lightboxModal.classList.remove('active');
       lightboxModal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
-    });
-
-    lightboxPrev.addEventListener('click', () => {
-      goToPrev();
-      lightboxImg.src = images[currentImageIndex];
-    });
-
-    lightboxNext.addEventListener('click', () => {
-      goToNext();
-      lightboxImg.src = images[currentImageIndex];
     });
 
     lightboxModal.addEventListener('click', (e) => {
@@ -832,6 +815,26 @@
         lightboxModal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
       }
+    });
+
+    // Function to open lightbox (called after images are loaded)
+    function openLightbox() {
+      if (images.length > 0) {
+        lightboxImg.src = images[currentImageIndex];
+        lightboxModal.classList.add('active');
+        lightboxModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    lightboxPrev.addEventListener('click', () => {
+      goToPrev();
+      if (images.length > 0) lightboxImg.src = images[currentImageIndex];
+    });
+
+    lightboxNext.addEventListener('click', () => {
+      goToNext();
+      if (images.length > 0) lightboxImg.src = images[currentImageIndex];
     });
 
     // Keyboard navigation
@@ -843,7 +846,7 @@
           lightboxModal.classList.remove('active');
           document.body.style.overflow = '';
         }
-        lightboxImg.src = images[currentImageIndex];
+        if (images.length > 0) lightboxImg.src = images[currentImageIndex];
       }
     });
 
@@ -921,6 +924,9 @@
           });
           thumbnails.appendChild(thumb);
         });
+
+        // Now set up lightbox click on main image (after images are loaded)
+        mainImage.addEventListener('click', openLightbox);
 
         // Show content
         loadingState.style.display = 'none';
