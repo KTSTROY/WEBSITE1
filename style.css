@@ -1351,8 +1351,7 @@ textarea:focus-visible {
    DETAIL PAGE SPECIFIC
    ============================================ */
 .back-button-container {
-  margin-bottom: 2rem;
-  padding-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .back-button {
