@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="КТ СТРОЙ КОНСУЛТ ЕООД – Детайли за проект" />
+  <meta name="description" content="КТ СТРОЙ КОНСУЛТ ЕООД – Детайли за обект" />
   <meta name="theme-color" content="#f7f5f0" />
-  <title>Детайли за проект | КТ СТРОЙ КОНСУЛТ</title>
+  <title>Детайли за обект | КТ СТРОЙ КОНСУЛТ</title>
 
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="manifest" href="manifest.json">
@@ -569,9 +569,9 @@
           <li><a href="index.html#home">Начало</a></li>
           <li><a href="index.html#services">Услуги</a></li>
           <li><a href="index.html#process">Процес</a></li>
-          <li><a href="index.html#projects" class="active">Проекти</a></li>
+          <li><a href="index.html#projects" class="active">Обекти</a></li>
           <li><a href="index.html#about">За нас</a></li>
-          <li><a href="index.html#clients-investors">Клиенти</a></li>
+          <li><a href="index.html#clients-investors">Опит</a></li>
           <li><a href="index.html#contact">Контакт</a></li>
         </ul>
         <button class="hamburger" aria-label="Меню"><i class="fas fa-bars"></i></button>
@@ -586,23 +586,23 @@
       <div class="back-button-container">
         <a href="#" id="backButton" class="back-button">
           <i class="fas fa-arrow-left"></i>
-          <span>Назад към проекти</span>
+          <span>Назад към обекти</span>
         </a>
       </div>
 
       <!-- Loading state -->
       <div id="loadingState" class="loading-state">
         <div class="loading-spinner"></div>
-        <p>Зареждане на проекта...</p>
+        <p>Зареждане на обекта...</p>
       </div>
 
       <!-- Error state -->
       <div id="errorState" class="error-state" style="display: none;">
         <i class="fas fa-exclamation-triangle"></i>
-        <h3>Проектът не е намерен</h3>
-        <p>Моля, върнете се към списъка с проекти</p>
+        <h3>Обектът не е намерен</h3>
+        <p>Моля, върнете се към списъка с обекти</p>
         <a href="index.html#projects" class="btn" style="margin-top: 1rem;">
-          Към проекти
+          Към обекти
         </a>
       </div>
 
@@ -613,7 +613,7 @@
           <h1 id="project-title"></h1>
           <span id="projectStatus" class="project-status">
             <i class="fas fa-hammer"></i>
-            <span id="statusText">В изпълнение</span>
+            <span id="statusText">Текущ обект</span>
           </span>
         </div>
 
@@ -646,7 +646,7 @@
         <div class="project-details-section">
           <h2 class="section-title">
             <i class="fas fa-info-circle" style="color: var(--accent); margin-right: 0.5rem;"></i>
-            Детайли за проекта
+            Детайли за обекта
           </h2>
 
           <div class="project-info-grid">
@@ -895,7 +895,7 @@
           statusEl.classList.add('completed');
           statusEl.innerHTML = '<i class="fas fa-check-circle"></i> <span>Завършен</span>';
         } else {
-          statusTextEl.textContent = 'В изпълнение';
+          statusTextEl.textContent = 'Текущ обект';
         }
 
         // Dynamic values from JSON (ЗП, РЗП, Инвеститор, Участие, etc.)

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="КТ СТРОЙ КОНСУЛТ ЕООД – Проекти в изпълнение" />
+  <meta name="description" content="КТ СТРОЙ КОНСУЛТ ЕООД – Текущи обекти от професионалния опит" />
   <meta name="theme-color" content="#f7f5f0" />
-  <title>Проекти в изпълнение | КТ СТРОЙ КОНСУЛТ</title>
+  <title>Текущи обекти | КТ СТРОЙ КОНСУЛТ</title>
 
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="manifest" href="manifest.json">
@@ -361,9 +361,9 @@
           <li><a href="index.html#home">Начало</a></li>
           <li><a href="index.html#services">Услуги</a></li>
           <li><a href="index.html#process">Процес</a></li>
-          <li><a href="index.html#projects" class="active">Проекти</a></li>
+          <li><a href="index.html#projects" class="active">Обекти</a></li>
           <li><a href="index.html#about">За нас</a></li>
-          <li><a href="index.html#clients-investors">Клиенти</a></li>
+          <li><a href="index.html#clients-investors">Опит</a></li>
           <li><a href="index.html#contact">Контакт</a></li>
         </ul>
         <button class="hamburger" aria-label="Меню"><i class="fas fa-bars"></i></button>
@@ -375,8 +375,8 @@
   <main class="page-container">
     <div class="container">
       <div class="page-header">
-        <h1>Проекти в изпълнение</h1>
-        <p class="section-subtitle">Разгледайте нашите текущи проекти в процес на изграждане</p>
+        <h1>Текущи обекти</h1>
+        <p class="section-subtitle">Обекти, в които фокусът е върху координация, контрол и отчетност</p>
       </div>
       
       <!-- Filters -->
@@ -495,7 +495,7 @@
 
         window.allProjects = projects;
 
-        projectsCount.textContent = `Показване на ${projects.length} проекта`;
+        projectsCount.textContent = `Показване на ${projects.length} обекта`;
         projectsCount.style.display = 'block';
 
         const categories = [...new Set(projects.map(p => p.category))];
@@ -520,11 +520,11 @@
             noResultsEl.className = 'no-results';
             noResultsEl.innerHTML = `
               <i class="fas fa-search"></i>
-              <h3>Няма намерени проекти</h3>
+              <h3>Няма намерени обекти</h3>
               <p>Опитайте с различни критерии за търсене</p>
             `;
             gallery.appendChild(noResultsEl);
-            projectsCount.textContent = 'Няма намерени проекти';
+            projectsCount.textContent = 'Няма намерени обекти';
             return;
           }
 
@@ -538,7 +538,7 @@
                 <img src="${p.thumb}" alt="${p.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300?text=Изображение+не+е+намерено'">
                 <span class="progress-badge">
                   <i class="fas fa-hammer"></i>
-                  В изпълнение
+                  Текущ обект
                 </span>
               </div>
               <div class="project-info">
@@ -551,7 +551,7 @@
             gallery.appendChild(card);
           });
 
-          projectsCount.textContent = `Показване на ${projectsToRender.length} от ${projects.length} проекта`;
+          projectsCount.textContent = `Показване на ${projectsToRender.length} от ${projects.length} обекта`;
 
           const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
@@ -606,7 +606,7 @@
           <div class="no-results">
             <i class="fas fa-exclamation-triangle"></i>
             <h3>Не може да се зареди съдържанието</h3>
-            <p>За да видите проектите, отворете сайта чрез локален сървър.</p>
+            <p>За да видите обектите, отворете сайта чрез локален сървър.</p>
             <p style="font-size: 0.8125rem; margin-top: 0.5rem; opacity: 0.7;">
               Пример: <code>python3 -m http.server 8000</code>
             </p>
