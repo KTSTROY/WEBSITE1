@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ktstroy-cache-v1';
+const CACHE_NAME = 'ktstroy-cache-v3-modern';
 const urlsToCache = [
   'index.html',
   'index-en.html',

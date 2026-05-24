@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="КТ СТРОЙ КОНСУЛТ ЕООД – Строим с внимание към детайла." />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#f7f5f0" />
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="строителство, ремонт, строителни услуги, фасади, КТ СТРОЙ, KT STROY, саниране, апартаменти, довършителни дейности" />
   <link rel="canonical" href="https://ktstroyconsult.com/" />
@@ -27,7 +27,7 @@
   <!-- Google Fonts - Modern Stack -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -40,6 +40,21 @@
 
   <!-- Основен CSS -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Refresh = go to top. Clears #hash on reload so browser doesn't jump to anchor. -->
+  <script>
+    (function() {
+      if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+      try {
+        var entries = performance.getEntriesByType('navigation');
+        var isReload = entries.length && entries[0].type === 'reload';
+        if (isReload && window.location.hash) {
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+      } catch (e) {}
+      window.addEventListener('load', function() { window.scrollTo(0, 0); });
+    })();
+  </script>
 </head>
 <body>
   <!-- Skip to content for accessibility -->
@@ -73,15 +88,9 @@
   </header>
 
   <main role="main" id="main-content">
-    <!-- HERO SECTION -->
-    <section id="home" class="hero-section" data-aos="fade-up">
-      <div class="hero-overlay"></div>
+    <!-- HERO SECTION with rotating project slideshow -->
+    <section id="home" class="hero-section">
       <div class="hero-content container">
-        <img
-          src="https://i.ibb.co/spB6b5Mc/Untitled-design-4.png"
-          alt="Лого КТ СТРОЙ КОНСУЛТ"
-          class="hero-logo"
-        />
         <h1>Добре дошли в</h1>
         <h2>КТ СТРОЙ КОНСУЛТ ЕООД</h2>
         <p>Строим с внимание към детайла</p>
@@ -89,6 +98,55 @@
           <span>Научете повече</span>
           <i class="fas fa-arrow-right"></i>
         </a>
+        <div class="hero-stats">
+          <span>10+ години опит</span>
+          <span class="hero-stat-divider"></span>
+          <span>50+ проекта</span>
+          <span class="hero-stat-divider"></span>
+          <span>София</span>
+        </div>
+      </div>
+
+      <!-- Right panel: auto-rotating project slideshow -->
+      <div class="hero-slideshow" id="heroSlideshow">
+        <div class="hero-slide active" data-slug="mycampus">
+          <img src="images/completed/mycampus/4.jpg" alt="MyCampus — Студентско общежитие" />
+        </div>
+        <div class="hero-slide" data-slug="klinika">
+          <img src="images/completed/klinika/4.JPEG" alt="Aesthe Clinic — Офис сграда и медицински център" />
+        </div>
+        <div class="hero-slide" data-slug="baucher">
+          <img src="images/completed/baucher/7.JPEG" alt="Ремонт на фасадна облицовка и покриви" />
+        </div>
+        <div class="hero-slide" data-slug="aleksov">
+          <img src="images/completed/aleksov/2.JPEG" alt="Жилищен комплекс — довършителни работи" />
+        </div>
+        <div class="hero-slide" data-slug="uchilishte">
+          <img src="images/completed/uchilishte/6.JPEG" alt="Преустройство и саниране на училище" />
+        </div>
+
+        <!-- Per-slide caption (updates with active slide) -->
+        <div class="hero-slide-caption" id="heroCaption">
+          <strong>MyCampus</strong>
+          Студентско общежитие  ·  София
+        </div>
+
+        <!-- Pagination dots -->
+        <div class="hero-dots" id="heroDots">
+          <button class="hero-dot active" data-index="0" aria-label="Слайд 1"></button>
+          <button class="hero-dot" data-index="1" aria-label="Слайд 2"></button>
+          <button class="hero-dot" data-index="2" aria-label="Слайд 3"></button>
+          <button class="hero-dot" data-index="3" aria-label="Слайд 4"></button>
+          <button class="hero-dot" data-index="4" aria-label="Слайд 5"></button>
+        </div>
+
+        <!-- Hover navigation arrows -->
+        <button class="hero-nav prev" id="heroPrev" aria-label="Предишен проект">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <button class="hero-nav next" id="heroNext" aria-label="Следващ проект">
+          <i class="fas fa-arrow-right"></i>
+        </button>
       </div>
     </section>
 
@@ -393,6 +451,84 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     AOS.init({ duration: 1000, once: true, offset: 100 });
+  </script>
+
+  <!-- Hero project slideshow -->
+  <script>
+    (function() {
+      const slideshow = document.getElementById('heroSlideshow');
+      if (!slideshow) return;
+
+      const slides = slideshow.querySelectorAll('.hero-slide');
+      const dots = slideshow.querySelectorAll('.hero-dot');
+      const caption = document.getElementById('heroCaption');
+      const prevBtn = document.getElementById('heroPrev');
+      const nextBtn = document.getElementById('heroNext');
+
+      const slideMeta = {
+        mycampus:   { name: 'MyCampus',          meta: 'Студентско общежитие  ·  София' },
+        klinika:    { name: 'Aesthe Clinic',     meta: 'Офис сграда и медицински център  ·  София' },
+        baucher:    { name: 'Жилищна сграда',    meta: 'Ремонт на фасадна облицовка  ·  София' },
+        aleksov:    { name: 'Жилищен комплекс',  meta: 'Довършителни работи  ·  София' },
+        uchilishte: { name: 'Училище',           meta: 'Преустройство и саниране  ·  София' }
+      };
+
+      let current = 0;
+      let timer = null;
+      const INTERVAL = 5500;
+
+      function show(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((s, i) => s.classList.toggle('active', i === current));
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        const slug = slides[current].dataset.slug;
+        const data = slideMeta[slug];
+        if (data && caption) {
+          caption.innerHTML = '<strong>' + data.name + '</strong>' + data.meta;
+        }
+      }
+
+      function next() { show(current + 1); }
+      function prev() { show(current - 1); }
+
+      function startTimer() {
+        stopTimer();
+        timer = setInterval(next, INTERVAL);
+      }
+      function stopTimer() {
+        if (timer) { clearInterval(timer); timer = null; }
+      }
+
+      prevBtn.addEventListener('click', () => { prev(); startTimer(); });
+      nextBtn.addEventListener('click', () => { next(); startTimer(); });
+      dots.forEach(dot => dot.addEventListener('click', () => {
+        show(parseInt(dot.dataset.index, 10));
+        startTimer();
+      }));
+
+      // Pause on hover, resume on leave
+      slideshow.addEventListener('mouseenter', stopTimer);
+      slideshow.addEventListener('mouseleave', startTimer);
+
+      // Keyboard nav when hero is in view
+      document.addEventListener('keydown', (e) => {
+        const rect = slideshow.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+        if (e.key === 'ArrowLeft')  { prev(); startTimer(); }
+        if (e.key === 'ArrowRight') { next(); startTimer(); }
+      });
+
+      // Preload remaining images for smooth transitions
+      slides.forEach(s => {
+        const img = s.querySelector('img');
+        if (img) {
+          const preload = new Image();
+          preload.src = img.src;
+        }
+      });
+
+      startTimer();
+    })();
   </script>
 
   <!-- Основен JS -->
