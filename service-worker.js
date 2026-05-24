@@ -1,30 +1,52 @@
-const CACHE_NAME = 'ktstroy-cache-v3-modern';
+const CACHE_NAME = 'ktstroy-cache-v5';
 const urlsToCache = [
+  './',
   'index.html',
-  'index-en.html',
+  'completed.html',
+  'in-progress.html',
+  'detail.html',
   'style.css',
   'manifest.json',
-  'service-worker.js',
-  // Можете да добавите още ресурси и изображения, които да бъдат кеширани
+  'images/navbar-logo.png',
+  'images/about-quality.jpg',
+  'images/partners/maxxmart-cropped.jpg',
+  'images/partners/angro.png',
+  'images/partners/knauf.svg',
+  'images/partners/baumit.svg',
+  'images/partners/terazid.png',
+  'data/projects-completed.json',
+  'data/projects-in-progress.json',
 ];
 
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => {
-         return cache.addAll(urlsToCache);
-      })
+      .then(cache => cache.addAll(urlsToCache))
   );
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(keys => Promise.all(
+      keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+    ))
+  );
+  self.clients.claim();
 });
 
 self.addEventListener('fetch', event => {
+  if (event.request.method !== 'GET' || new URL(event.request.url).origin !== self.location.origin) {
+    return;
+  }
+
   event.respondWith(
-    caches.match(event.request)
+    fetch(event.request)
       .then(response => {
-         if (response) {
-           return response;
-         }
-         return fetch(event.request);
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+        return response;
       })
+      .catch(() => caches.match(event.request).then(response => response || caches.match('index.html')))
   );
 });
