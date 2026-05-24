@@ -1071,6 +1071,12 @@ section {
 }
 
 .about-text p:first-child::first-letter {
+  font-size: inherit;
+  float: none;
+  margin: 0;
+}
+
+.about-dropcap {
   font-family: var(--font-display);
   font-size: 4.5rem;
   font-weight: 400;
@@ -1078,6 +1084,7 @@ section {
   line-height: 0.85;
   margin: 0.25rem 0.75rem 0 0;
   color: var(--text-primary);
+  letter-spacing: -0.04em;
 }
 
 .about-image-container {
