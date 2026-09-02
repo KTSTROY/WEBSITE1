@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="КТ СТРОЙ КОНСУЛТ ЕООД – Строим с внимание към детайла." />
-  <meta name="theme-color" content="#f7f5f0" />
+  <meta name="theme-color" content="#f7f4ed" />
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="строителство, ремонт, строителни услуги, фасади, КТ СТРОЙ, KT STROY, саниране, апартаменти, довършителни дейности" />
   <link rel="canonical" href="https://ktstroyconsult.com/" />
@@ -27,7 +27,7 @@
   <!-- Google Fonts - Modern Stack -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -68,8 +68,9 @@
     <nav class="navbar" role="navigation" aria-label="Главна навигация">
       <div class="container menu">
         <div class="navbar-brand">
-          <a href="#home">
-            <img src="images/navbar-logo.png" alt="КТ СТРОЙ КОНСУЛТ" class="navbar-logo">
+          <a href="#home" class="brand-word">
+            <span class="brand-name">КТ СТРОЙ КОНСУЛТ</span>
+            <span class="brand-suffix">ЕООД</span>
           </a>
         </div>
         <ul>
@@ -78,7 +79,6 @@
           <li><a href="#process">Процес</a></li>
           <li><a href="#projects">Проекти</a></li>
           <li><a href="#about">За нас</a></li>
-          <li><a href="#clients-investors">Клиенти</a></li>
           <li><a href="#contact">Контакт</a></li>
         </ul>
         <div class="navbar-contact">
@@ -95,24 +95,21 @@
   <main role="main" id="main-content">
     <!-- HERO SECTION with rotating project slideshow -->
     <section id="home" class="hero-section">
-      <div class="hero-content container">
-        <h1>Добре дошли в</h1>
-        <h2>КТ СТРОЙ КОНСУЛТ ЕООД</h2>
-        <p>Строим с внимание към детайла</p>
-        <a href="#services" class="btn">
-          <span>Научете повече</span>
-          <i class="fas fa-arrow-right"></i>
-        </a>
-        <div class="hero-stats">
-          <span>10+ години опит</span>
-          <span class="hero-stat-divider"></span>
-          <span>50+ проекта</span>
-          <span class="hero-stat-divider"></span>
-          <span>София</span>
+      <div class="hero-copy">
+        <span class="sec-eyebrow">Строителен консултинг — София</span>
+        <h1 class="hero-title">Прецизност във всеки детайл.</h1>
+        <p class="hero-sub">Инвеститорски контрол и управление на строителни проекти — с гарантиран бюджет, срок и качество, от концепция до въвеждане в експлоатация.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn">
+            <span>Запитване</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#projects" class="link-underline">Избрани проекти</a>
         </div>
       </div>
 
       <!-- Right panel: auto-rotating project slideshow -->
+      <div class="hero-media">
       <div class="hero-slideshow" id="heroSlideshow">
         <div class="hero-slide active" data-slug="mycampus">
           <img src="images/completed/mycampus/4.jpg" alt="MyCampus — Студентско общежитие" />
@@ -153,82 +150,103 @@
           <i class="fas fa-arrow-right"></i>
         </button>
       </div>
+      </div>
     </section>
 
+    <!-- STATS BAND -->
+    <div class="stats-band container" aria-label="Ключови показатели">
+      <div class="stats-band-item">
+        <span class="stats-band-num">10+</span>
+        <span class="stats-band-label">Години опит</span>
+      </div>
+      <div class="stats-band-item">
+        <span class="stats-band-num">50+</span>
+        <span class="stats-band-label">Реализирани проекта</span>
+      </div>
+      <div class="stats-band-item">
+        <span class="stats-band-num">100%</span>
+        <span class="stats-band-label">Завършени в срок</span>
+      </div>
+    </div>
+
     <!-- SERVICES -->
-    <section id="services" class="services-section" data-aos="fade-up">
+    <section id="services" class="svc-section" data-aos="fade-up">
       <div class="container">
-        <h2>Нашите услуги</h2>
-        <p class="section-subtitle">
-          Предлагаме цялостни решения за строителство и ремонт – гаранция за качество и професионализъм.
-        </p>
-        <div class="services-grid">
-          <div class="service-card" data-service="consultant" data-aos="zoom-in" tabindex="0" role="button" aria-describedby="consultant-desc">
-            <i class="fas fa-toolbox" aria-hidden="true"></i>
-            <h3>
-              Консултантски услуги и управление на проекти
-              <i class="fas fa-info-circle detail-icon" aria-label="Повече информация"></i>
-            </h3>
-            <p id="consultant-desc">Професионални консултации и управление за инвеститори, фирми и частни клиенти.</p>
-            <ul class="service-outcomes">
-              <li>Оптимизация на бюджет до 15%</li>
-              <li>Контрол на срокове и качество</li>
-              <li>Представителство пред институции</li>
-            </ul>
+        <div class="sec-head">
+          <span class="sec-eyebrow">01 — Услуги</span>
+          <h2 class="sec-title">Цялостни решения, водени от една отговорност</h2>
+        </div>
+        <div class="svc-list">
+          <div class="svc-row service-card" data-service="consultant" tabindex="0" role="button" aria-describedby="consultant-desc">
+            <span class="svc-num">/ 01</span>
+            <h3 class="svc-title">Консултантски услуги и управление на проекти</h3>
+            <div class="svc-body">
+              <p id="consultant-desc">Професионални консултации и управление за инвеститори, фирми и частни клиенти.</p>
+              <ul class="svc-outcomes">
+                <li>Оптимизация на бюджет до 15%</li>
+                <li>Контрол на срокове и качество</li>
+                <li>Представителство пред институции</li>
+              </ul>
+              <span class="svc-more">Повече подробности <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
           </div>
-          <div class="service-card" data-service="construction" data-aos="zoom-in" data-aos-delay="100" tabindex="0" role="button">
-            <i class="fas fa-hammer"></i>
-            <h3>
-              Цялостно строителство
-              <i class="fas fa-info-circle detail-icon"></i>
-            </h3>
-            <p>Изпълнение от нулев етап до въвеждане в експлоатация с високо качество.</p>
-            <ul class="service-outcomes">
-              <li>Носещи конструкции и фасади</li>
-              <li>Инженерни инсталации (ВиК, ОВК, ел.)</li>
-              <li>Управление на подизпълнители</li>
-            </ul>
+          <div class="svc-row service-card" data-service="construction" tabindex="0" role="button">
+            <span class="svc-num">/ 02</span>
+            <h3 class="svc-title">Цялостно строителство</h3>
+            <div class="svc-body">
+              <p>Изпълнение от нулев етап до въвеждане в експлоатация с високо качество.</p>
+              <ul class="svc-outcomes">
+                <li>Носещи конструкции и фасади</li>
+                <li>Инженерни инсталации (ВиК, ОВК, ел.)</li>
+                <li>Управление на подизпълнители</li>
+              </ul>
+              <span class="svc-more">Повече подробности <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
           </div>
-          <div class="service-card" data-service="renovation" data-aos="zoom-in" data-aos-delay="200" tabindex="0" role="button">
-            <i class="fas fa-paint-roller"></i>
-            <h3>
-              Основни ремонти
-              <i class="fas fa-info-circle detail-icon"></i>
-            </h3>
-            <p>Пълни вътрешни и външни ремонти на апартаменти, къщи, офиси и търговски обекти.</p>
-            <ul class="service-outcomes">
-              <li>Хидро- и топлоизолации</li>
-              <li>Модернизация на инсталации</li>
-              <li>Финни довършителни работи</li>
-            </ul>
+          <div class="svc-row service-card" data-service="renovation" tabindex="0" role="button">
+            <span class="svc-num">/ 03</span>
+            <h3 class="svc-title">Основни ремонти</h3>
+            <div class="svc-body">
+              <p>Пълни вътрешни и външни ремонти на апартаменти, къщи, офиси и търговски обекти.</p>
+              <ul class="svc-outcomes">
+                <li>Хидро- и топлоизолации</li>
+                <li>Модернизация на инсталации</li>
+                <li>Фини довършителни работи</li>
+              </ul>
+              <span class="svc-more">Повече подробности <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- PROCESS — 4-step methodology -->
-    <section id="process" class="process-section" data-aos="fade-up">
+    <section id="process" class="proc-section" data-aos="fade-up">
       <div class="container">
-        <span class="eyebrow">Методология  /  Как работим</span>
-        <h2>Прозрачен процес от началото до края</h2>
-        <p class="section-subtitle">
-          Всеки проект следва структурирана методология, която гарантира контрол върху срокове, бюджет и качество.
-        </p>
+        <div class="sec-head">
+          <span class="sec-eyebrow">02 — Процес</span>
+          <h2 class="sec-title">Прозрачен процес от началото до края</h2>
+          <p class="sec-sub">Всеки проект следва структурирана методология, която гарантира контрол върху срокове, бюджет и качество.</p>
+        </div>
 
-        <div class="process-grid">
-          <div class="process-step">
+        <div class="proc-grid">
+          <div class="proc-step">
+            <span class="proc-num">I.</span>
             <h3>Анализ и консултация</h3>
             <p>Оценка на проектни изисквания, бюджетна рамка и срокове. Изготвяне на предварителна спецификация.</p>
           </div>
-          <div class="process-step">
+          <div class="proc-step">
+            <span class="proc-num">II.</span>
             <h3>Планиране и проектиране</h3>
             <p>Детайлен график на дейностите, координация с проектанти и доставчици, оптимизация на разходите.</p>
           </div>
-          <div class="process-step">
+          <div class="proc-step">
+            <span class="proc-num">III.</span>
             <h3>Изпълнение и контрол</h3>
             <p>Управление на подизпълнители, контрол на качество и безопасност, седмични отчети към инвеститора.</p>
           </div>
-          <div class="process-step">
+          <div class="proc-step">
+            <span class="proc-num">IV.</span>
             <h3>Предаване и поддръжка</h3>
             <p>Финална приемка, документация, въвеждане в експлоатация и гаранционна поддръжка.</p>
           </div>
@@ -237,249 +255,152 @@
     </section>
 
     <!-- ПРОЕКТИ -->
-    <section id="projects" class="projects-section" data-aos="fade-up">
+    <section id="projects" class="pf-section" data-aos="fade-up">
       <div class="container">
-        <h2>Наши проекти</h2>
-        <p class="section-subtitle">
-          Изберете категория и разгледайте нашите изпълнения и завършени проекти.
-        </p>
+        <div class="sec-head sec-head-split">
+          <div>
+            <span class="sec-eyebrow">03 — Портфолио</span>
+            <h2 class="sec-title">Избрани проекти</h2>
+          </div>
+          <a href="completed.html" class="link-underline">Всички проекти <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
 
-        <div class="project-categories">
-          <!-- В ИЗПЪЛНЕНИЕ -->
-          <a href="in-progress.html"
-             class="project-category"
-             style="background-image: url('images/projects/in-progress/111.jpg')">
-            <h3>В ИЗПЪЛНЕНИЕ</h3>
+        <div class="pf-grid">
+          <a href="detail.html?slug=mycampus&status=completed" class="pf-item pf-item-lead">
+            <img src="images/completed/mycampus/5.jpg" alt="Студентско общежитие MyCampus" loading="lazy">
+            <div class="pf-caption">
+              <h3>Студентско общежитие MyCampus</h3>
+              <span>София — Ново строителство</span>
+            </div>
           </a>
-
-          <!-- ЗАВЪРШЕНИ ПРОЕКТИ -->
-          <a href="completed.html"
-             class="project-category"
-             style="background-image: url('images/projects/completed/222.jpg')">
-            <h3>ЗАВЪРШЕНИ ПРОЕКТИ</h3>
-          </a>
+          <div class="pf-side">
+            <a href="detail.html?slug=klinika&status=completed" class="pf-item">
+              <img src="images/completed/klinika/1.JPG" alt="Офис сграда и медицински център" loading="lazy">
+              <div class="pf-caption">
+                <h3>Офис сграда и медицински център</h3>
+                <span>София — Изграждане</span>
+              </div>
+            </a>
+            <a href="detail.html?slug=ns&status=completed" class="pf-item">
+              <img src="images/completed/ns.jpg" alt="Зала „Света София“ — пленарна зала" loading="lazy">
+              <div class="pf-caption">
+                <h3>Зала „Света София“ — пленарна зала</h3>
+                <span>София — Преустройство</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="pf-foot">
+          <a href="in-progress.html" class="link-underline">Обекти в изпълнение <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="about-section" data-aos="fade-up">
-      <div class="container">
-        <h2>За нас</h2>
-        <p class="section-subtitle">
-          Години опит и множество успешни проекти – гаранция за качество и професионализъм.
-        </p>
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              Въпреки че "КТ Строй Консулт" ЕООД е новосъздадена компания, нашият екип от специалисти притежава над 10 години професионален опит, натрупан при изпълнение на множество успешни проекти за големи инвеститори и водещи компании.
-            </p>
-            <p style="margin-top: 1rem;">
-              Нашият Управител е ръководил изграждането на редица мащабни проекти, включително жилищни сгради, офис центрове, реконструкция и ремонт на съществуващи сгради, училища и др. Този опит е гаранция за успешната реализация на Вашия проект.
-            </p>
-          </div>
-          <div class="about-image-container">
-            <img
-              src="images/about-quality.jpg"
-              alt="Опит и качество"
-              loading="lazy"
-            />
+    <section id="about" class="ab-section" data-aos="fade-up">
+      <div class="container ab-grid">
+        <div class="ab-text">
+          <span class="sec-eyebrow">04 — За нас</span>
+          <p class="ab-lead">Екип с над десет години опит, натрупан в проекти за големи инвеститори и водещи компании.</p>
+          <p class="ab-body">Нашият управител е ръководил изграждането на редица мащабни проекти — жилищни сгради, офис центрове, реконструкции на съществуващи сгради, училища и обществени обекти. Този опит е гаранция за успешната реализация на Вашия проект.</p>
+          <div class="img-frame">
+            <img src="images/about-quality.jpg" alt="Опит и качество" loading="lazy">
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- TEAM / FOUNDER -->
-    <section id="team" class="team-section" data-aos="fade-up">
-      <div class="container">
-        <span class="eyebrow">Управление  /  Екип</span>
-        <h2>Експертиза, на която можете да разчитате</h2>
-        <p class="section-subtitle">
-          Зад всеки наш проект стои екип с дългогодишен опит и доказани резултати.
-        </p>
-
-        <article class="founder-card">
-          <div class="founder-avatar">
-            <div class="founder-avatar-placeholder">ЙА</div>
+        <div class="founder-panel">
+          <div class="founder-monogram" aria-hidden="true">ЮА</div>
+          <div class="founder-id">
+            <h3>Юлиян Алексиев</h3>
+            <span class="founder-role">Управител и основател</span>
           </div>
-
-          <div class="founder-info">
-            <h3 class="founder-name">Йордан Алексиев</h3>
-            <span class="founder-position">Управител &amp; Founder</span>
-
-            <div class="founder-bio">
-              <p>
-                С над <strong>10 години професионален опит</strong> в строителния сектор,
-                специализиран в управление на мащабни проекти за жилищни сгради,
-                офис центрове, реконструкции и обществени обекти.
-              </p>
-              <p>
-                Ръководил е изграждането на медицински центрове, студентски общежития,
-                училища и многофамилни жилищни комплекси в София и страната —
-                от етап концепция до въвеждане в експлоатация.
-              </p>
+          <p class="founder-bio">Специализиран в управление на мащабни проекти — жилищни сгради, офис центрове, реконструкции и обществени обекти. Ръководил е изграждането на медицински центрове, студентски общежития и училища в София и страната — от концепция до въвеждане в експлоатация.</p>
+          <div class="founder-stats">
+            <div class="founder-stat">
+              <span class="num">10+</span>
+              <span class="label">Години опит</span>
             </div>
-
-            <div class="founder-credentials">
-              <div class="founder-credential">
-                <span class="num">10+</span>
-                <span class="label">години опит</span>
-              </div>
-              <div class="founder-credential">
-                <span class="num">50+</span>
-                <span class="label">реализирани проекта</span>
-              </div>
-              <div class="founder-credential">
-                <span class="num">100%</span>
-                <span class="label">завършени в срок</span>
-              </div>
+            <div class="founder-stat">
+              <span class="num">50+</span>
+              <span class="label">Проекта</span>
             </div>
-
-            <div class="founder-links">
-              <a href="mailto:y.aleksiev@ktstroyconsult.com" class="founder-link">
-                <i class="fas fa-envelope"></i>
-                <span>Email</span>
-              </a>
+            <div class="founder-stat">
+              <span class="num">100%</span>
+              <span class="label">В срок</span>
             </div>
           </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- WHY CHOOSE US -->
-    <section id="why-choose-us" class="why-choose-us-section" data-aos="fade-up">
-      <div class="container">
-        <h2>Защо да изберете нас</h2>
-        <div class="why-grid">
-          <div class="why-item" data-aos="zoom-in" data-aos-delay="0">
-            <i class="fas fa-check-circle"></i>
-            <h3><span class="badge">1</span> Личен ангажимент</h3>
-            <p>Експертно мнение и пълен контрол върху всеки етап.</p>
-          </div>
-          <div class="why-item" data-aos="zoom-in" data-aos-delay="100">
-            <i class="fas fa-users"></i>
-            <h3><span class="badge">2</span> Стриктен контрол</h3>
-            <p>Постоянен мониторинг на качество и срокове.</p>
-          </div>
-          <div class="why-item" data-aos="zoom-in" data-aos-delay="200">
-            <i class="fas fa-clock"></i>
-            <h3><span class="badge">3</span> Прозрачност</h3>
-            <p>Ясни оферти и открита комуникация.</p>
-          </div>
-          <div class="why-item" data-aos="zoom-in" data-aos-delay="300">
-            <i class="fas fa-cogs"></i>
-            <h3><span class="badge">4</span> Гъвкави решения</h3>
-            <p>Персонализирани варианти спрямо бюджет и нужди.</p>
-          </div>
-          <div class="why-item" data-aos="zoom-in" data-aos-delay="400">
-            <i class="fas fa-leaf"></i>
-            <h3><span class="badge">5</span> Екологичен подход</h3>
-            <p>Работим чисто, безопасно и щадящо околната среда.</p>
-          </div>
+          <a href="mailto:y.aleksiev@ktstroyconsult.com" class="link-underline"><i class="fas fa-envelope" aria-hidden="true"></i> y.aleksiev@ktstroyconsult.com</a>
         </div>
       </div>
     </section>
 
     <!-- CLIENTS / INVESTORS LOGOS -->
-    <section id="clients-investors" class="clients-logos-section" data-aos="fade-up">
+    <section id="clients-investors" class="cl-section" data-aos="fade-up">
       <div class="container">
-        <span class="eyebrow">Доверили ни се  /  Investors &amp; clients</span>
-        <h2>Инвеститори и компании, които ни се доверяват</h2>
-        <p class="section-subtitle">
-          От държавни институции до частни инвеститори — работим с организации,
-          които изискват прецизност, прозрачност и срок.
-        </p>
-
-        <div class="client-logos-grid">
-          <div class="client-logo-item">
-            <div>
-              <span class="logo-mark">AT Инженеринг 2000</span>
-              <span class="logo-sub">Investor · ООД</span>
-            </div>
-          </div>
-          <div class="client-logo-item">
-            <div>
-              <span class="logo-mark">НСнРБ</span>
-              <span class="logo-sub">Народно събрание</span>
-            </div>
-          </div>
-          <div class="client-logo-item">
-            <div>
-              <span class="logo-mark">MyCampus</span>
-              <span class="logo-sub">Студентско общежитие</span>
-            </div>
-          </div>
-          <div class="client-logo-item">
-            <div>
-              <span class="logo-mark">Aesthe Clinic</span>
-              <span class="logo-sub">Медицински център</span>
-            </div>
-          </div>
-          <div class="client-logo-item">
-            <div>
-              <span class="logo-mark">Devin Properties</span>
-              <span class="logo-sub">Real Estate</span>
-            </div>
-          </div>
-          <div class="client-logo-item">
-            <div>
-              <span class="logo-mark">Foton Capital</span>
-              <span class="logo-sub">Development Fund</span>
-            </div>
-          </div>
-          <div class="client-logo-item">
-            <div>
-              <span class="logo-mark">Imoti Sofia</span>
-              <span class="logo-sub">Investment Group</span>
-            </div>
-          </div>
-          <div class="client-logo-item">
-            <div>
-              <span class="logo-mark">Sky Office Park</span>
-              <span class="logo-sub">Commercial</span>
-            </div>
-          </div>
+        <div class="sec-head">
+          <span class="sec-eyebrow">05 — Доверие</span>
+          <h2 class="sec-title">Инвеститори и институции, които ни се доверяват</h2>
         </div>
-      </div>
-    </section>
-
-    <!-- PARTNERS / SUPPLIERS -->
-    <section id="partners" class="partners-section" data-aos="fade-up">
-      <div class="container">
-        <h2>Доставчици и материали</h2>
-        <p class="section-subtitle">
-          Работим с водещи производители на строителни материали, които гарантират качество и дълготрайност.
-        </p>
-        <div class="partners-grid">
-          <a href="https://maxxmart.eu/" target="_blank" rel="noopener" class="partner-link" aria-label="Maxxmart">
-            <img src="images/partners/maxxmart-cropped.jpg" alt="Maxxmart" class="partner-logo">
-          </a>
-          <a href="https://www.angro.bg/" target="_blank" rel="noopener" class="partner-link" aria-label="Angro">
-            <img src="images/partners/angro.png" alt="Angro" class="partner-logo">
-          </a>
-          <a href="https://knauf.com/bg-BG" target="_blank" rel="noopener" class="partner-link" aria-label="Knauf">
-            <img src="images/partners/knauf.svg" alt="Knauf" class="partner-logo">
-          </a>
-          <a href="https://baumit.bg/" target="_blank" rel="noopener" class="partner-link" aria-label="Baumit">
-            <img src="images/partners/baumit.svg" alt="Baumit" class="partner-logo">
-          </a>
-          <a href="https://terazid.com/" target="_blank" rel="noopener" class="partner-link" aria-label="Terazid">
-            <img src="images/partners/terazid.png" alt="Terazid" class="partner-logo">
-          </a>
+        <div class="cl-grid">
+          <div class="cl-item">
+            <span class="cl-mark">АТ Инженеринг 2000</span>
+            <span class="cl-sub">Инвеститор</span>
+          </div>
+          <div class="cl-item">
+            <span class="cl-mark">Народно събрание</span>
+            <span class="cl-sub">Институция</span>
+          </div>
+          <div class="cl-item">
+            <span class="cl-mark">MyCampus</span>
+            <span class="cl-sub">Студентско общежитие</span>
+          </div>
+          <div class="cl-item">
+            <span class="cl-mark">Aesthe Clinic</span>
+            <span class="cl-sub">Медицински център</span>
+          </div>
+          <div class="cl-item">
+            <span class="cl-mark">Devin Properties</span>
+            <span class="cl-sub">Недвижими имоти</span>
+          </div>
+          <div class="cl-item">
+            <span class="cl-mark">Foton Capital</span>
+            <span class="cl-sub">Инвестиционен фонд</span>
+          </div>
+          <div class="cl-item">
+            <span class="cl-mark">Imoti Sofia</span>
+            <span class="cl-sub">Инвестиционна група</span>
+          </div>
+          <div class="cl-item">
+            <span class="cl-mark">Sky Office Park</span>
+            <span class="cl-sub">Търговски площи</span>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CONTACT FORM -->
-    <section id="contact" class="contact-section" data-aos="fade-up">
+    <section id="contact" class="ct-section" data-aos="fade-up">
       <div class="container">
-        <h2>Свържете се с нас</h2>
-        <p class="section-subtitle">
-          Имате въпрос или проект? Изпратете ни съобщение и ще се свържем с Вас!
-        </p>
-        
-        <div class="contact-content">
-          <div class="contact-form-container">
+        <div class="ct-grid">
+          <div class="ct-info">
+            <span class="sec-eyebrow">06 — Контакт</span>
+            <h2 class="sec-title">Да обсъдим Вашия проект</h2>
+            <p class="ct-sub">Свържете се с нас за консултация — ще се свържем с Вас в рамките на един работен ден.</p>
+            <div class="ct-lines">
+              <a href="tel:+359883481292" class="ct-line">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span>+359 883 481 292</span>
+              </a>
+              <a href="mailto:y.aleksiev@ktstroyconsult.com" class="ct-line">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <span>y.aleksiev@ktstroyconsult.com</span>
+              </a>
+              <a href="https://www.google.com/maps?q=42.69751,23.32415" target="_blank" rel="noopener" class="ct-line">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <span>ул. Йордан Трифонов 8А, София</span>
+              </a>
+            </div>
+          </div>
+          <div class="ct-form-panel">
             <form id="contactForm" class="contact-form" action="https://formsubmit.co/y.aleksiev@ktstroyconsult.com" method="POST" novalidate>
               <input type="hidden" name="_subject" value="Ново запитване от ktstroyconsult.com">
               <input type="hidden" name="_template" value="table">
@@ -535,55 +456,20 @@
               <p>Вашето съобщение беше изпратено успешно. Ще се свържем с Вас възможно най-скоро.</p>
             </div>
           </div>
-          
-          <div class="contact-info">
-            <h3>Директен контакт</h3>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <div>
-                <strong>Телефон</strong>
-                <a href="tel:+359883481292">+359 883 481 292</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <div>
-                <strong>Email</strong>
-                <a href="mailto:y.aleksiev@ktstroyconsult.com">y.aleksiev@ktstroyconsult.com</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>
-                <strong>Адрес</strong>
-                <a href="https://www.google.com/maps?q=42.69751,23.32415" target="_blank">
-                  ул. Йордан Трифонов 8А, София
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
   </main>
 
   <!-- FOOTER -->
-  <footer id="footer-contacts">
-    <div class="footer-container">
-      <h3>Контакти</h3>
-      <p><i class="fas fa-phone"></i> <a href="tel:+359883481292">+359 883 481 292</a></p>
-      <p><i class="fas fa-envelope"></i> <a href="mailto:y.aleksiev@ktstroyconsult.com">y.aleksiev@ktstroyconsult.com</a></p>
-      <p><i class="fas fa-map-marker-alt"></i>
-        <a
-          href="https://www.google.com/maps?q=42.69751,23.32415"
-          target="_blank"
-          rel="noopener"
-        >ул. Йордан Трифонов 8А, София</a>
-      </p>
-      <div class="footer-social">
-        <span class="social-disabled" aria-label="Facebook страница предстои" title="Facebook страница предстои"><i class="fab fa-facebook-f"></i></span>
+  <footer id="footer-contacts" class="site-footer">
+    <div class="container footer-row">
+      <span class="footer-word">КТ СТРОЙ КОНСУЛТ</span>
+      <span class="footer-copy">© 2025 КТ СТРОЙ КОНСУЛТ ЕООД. Всички права запазени.</span>
+      <div class="footer-links">
+        <a href="https://www.google.com/maps?q=42.69751,23.32415" target="_blank" rel="noopener">Google Maps</a>
+        <span class="social-disabled" aria-label="Facebook страница предстои" title="Facebook страница предстои">Facebook</span>
       </div>
-      <p style="margin-top: 1.5rem; font-size: 0.8125rem; color: var(--text-muted);">© 2025 КТ СТРОЙ КОНСУЛТ ЕООД. Всички права запазени.</p>
     </div>
   </footer>
 

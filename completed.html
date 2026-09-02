@@ -29,7 +29,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
@@ -172,8 +172,12 @@
     }
 
     .status-badge.completed {
-      background: rgba(34, 197, 94, 0.9);
-      color: white;
+      background: rgba(23, 20, 15, 0.82);
+      color: #f1ece1;
+      border-radius: 0;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.6875rem;
     }
 
     a.project-card img {
@@ -357,8 +361,9 @@
     <nav class="navbar" role="navigation" aria-label="Главна навигация">
       <div class="container menu">
         <div class="navbar-brand">
-          <a href="index.html">
-            <img src="images/navbar-logo.png" alt="КТ СТРОЙ КОНСУЛТ" class="navbar-logo">
+          <a href="index.html" class="brand-word">
+            <span class="brand-name">КТ СТРОЙ КОНСУЛТ</span>
+            <span class="brand-suffix">ЕООД</span>
           </a>
         </div>
         <ul>
@@ -367,7 +372,6 @@
           <li><a href="index.html#process">Процес</a></li>
           <li><a href="index.html#projects" class="active">Проекти</a></li>
           <li><a href="index.html#about">За нас</a></li>
-          <li><a href="index.html#clients-investors">Клиенти</a></li>
           <li><a href="index.html#contact">Контакт</a></li>
         </ul>
         <button class="hamburger" aria-label="Меню"><i class="fas fa-bars"></i></button>
