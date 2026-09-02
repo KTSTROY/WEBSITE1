@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="КТ СТРОЙ КОНСУЛТ ЕООД – Строим с внимание към детайла." />
-  <meta name="theme-color" content="#f7f4ed" />
+  <meta name="theme-color" content="#0c0a08" />
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="строителство, ремонт, строителни услуги, фасади, КТ СТРОЙ, KT STROY, саниране, апартаменти, довършителни дейности" />
   <link rel="canonical" href="https://ktstroyconsult.com/" />
@@ -93,63 +93,161 @@
   </header>
 
   <main role="main" id="main-content">
-    <!-- HERO SECTION with rotating project slideshow -->
-    <section id="home" class="hero-section">
-      <div class="hero-copy">
-        <span class="sec-eyebrow">Строителен консултинг — София</span>
-        <h1 class="hero-title">Прецизност във всеки детайл.</h1>
-        <p class="hero-sub">Инвеститорски контрол и управление на строителни проекти — с гарантиран бюджет, срок и качество, от концепция до въвеждане в експлоатация.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn">
-            <span>Запитване</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="#projects" class="link-underline">Избрани проекти</a>
+    <!-- HERO — dark cinematic stage with layered construction silhouettes -->
+    <section id="home" class="hero-dark">
+      <div class="hero-stage">
+        <div class="hero-glow" aria-hidden="true"></div>
+
+        <!-- Layer 1 — far skyline in haze -->
+        <svg class="hero-layer hero-layer-far" data-parallax="0.3" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="heroFar" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#6b5a43"></stop>
+              <stop offset="1" stop-color="#2a2218"></stop>
+            </linearGradient>
+          </defs>
+          <path fill="url(#heroFar)" d="M0 420 V300 H60 V250 H110 V300 H150 V210 H200 V180 H230 V210 H270 V280 H330 V230 H380 V300 H420 V160 H470 V140 H500 V160 H560 V260 H620 V220 H680 V300 H720 V190 H770 V170 H800 V190 H860 V280 H920 V240 H980 V300 H1020 V200 H1070 V150 H1110 V200 H1160 V270 H1220 V230 H1280 V300 H1330 V250 H1380 V300 H1440 V420 Z"></path>
+        </svg>
+
+        <!-- Layer 2 — buildings under construction and tower cranes -->
+        <svg class="hero-layer hero-layer-mid" data-parallax="0.2" viewBox="0 0 1440 460" preserveAspectRatio="xMinYMax slice" aria-hidden="true" focusable="false">
+          <g fill="#17130e">
+            <rect x="120" y="190" width="180" height="270"></rect>
+            <rect x="1000" y="240" width="180" height="220"></rect>
+            <rect x="560" y="120" width="260" height="340"></rect>
+          </g>
+          <g stroke="rgba(241,236,225,0.06)" stroke-width="1">
+            <path d="M150 190 V460 M180 190 V460 M210 190 V460 M240 190 V460 M270 190 V460"></path>
+            <path d="M120 220 H300 M120 250 H300 M120 280 H300 M120 310 H300 M120 340 H300 M120 370 H300 M120 400 H300 M120 430 H300"></path>
+            <path d="M1030 240 V460 M1060 240 V460 M1090 240 V460 M1120 240 V460 M1150 240 V460"></path>
+            <path d="M1000 270 H1180 M1000 300 H1180 M1000 330 H1180 M1000 360 H1180 M1000 390 H1180 M1000 420 H1180"></path>
+          </g>
+          <g fill="#241e16">
+            <rect x="560" y="120" width="260" height="6"></rect>
+            <rect x="560" y="154" width="260" height="6"></rect>
+            <rect x="560" y="188" width="260" height="6"></rect>
+            <rect x="560" y="222" width="260" height="6"></rect>
+            <rect x="560" y="256" width="260" height="6"></rect>
+            <rect x="560" y="290" width="260" height="6"></rect>
+          </g>
+          <g stroke="#241e16" stroke-width="4">
+            <path d="M580 120 V300 M640 120 V300 M700 120 V300 M760 120 V300 M812 120 V300"></path>
+          </g>
+          <g stroke="#1c1711" stroke-linecap="round" fill="none">
+            <path d="M420 460 V70" stroke-width="10"></path>
+            <path d="M420 70 H740" stroke-width="6"></path>
+            <path d="M420 70 H330" stroke-width="6"></path>
+            <path d="M420 44 L600 70 M420 44 L340 70 M420 44 V70" stroke-width="3"></path>
+            <path d="M640 70 V190" stroke-width="2"></path>
+            <path d="M400 150 L440 190 M440 150 L400 190 M400 230 L440 270 M440 230 L400 270 M400 310 L440 350 M440 310 L400 350 M400 390 L440 430 M440 390 L400 430" stroke-width="2"></path>
+          </g>
+          <g fill="#1c1711">
+            <rect x="405" y="72" width="34" height="22"></rect>
+            <rect x="632" y="188" width="16" height="10"></rect>
+            <rect x="330" y="74" width="40" height="16"></rect>
+          </g>
+          <g stroke="#17130e" stroke-linecap="round" fill="none">
+            <path d="M1250 460 V120" stroke-width="9"></path>
+            <path d="M1250 120 H980" stroke-width="5"></path>
+            <path d="M1250 120 H1340" stroke-width="5"></path>
+            <path d="M1250 96 L1080 120 M1250 96 L1330 120 M1250 96 V120" stroke-width="3"></path>
+            <path d="M1060 120 V220" stroke-width="2"></path>
+          </g>
+          <g fill="#17130e">
+            <rect x="1233" y="122" width="34" height="20"></rect>
+            <rect x="1300" y="124" width="38" height="14"></rect>
+            <rect x="1052" y="218" width="16" height="10"></rect>
+          </g>
+        </svg>
+
+        <!-- Layer 3 — scaffolding in the foreground -->
+        <svg class="hero-layer hero-layer-near" data-parallax="0.1" viewBox="0 0 1440 320" preserveAspectRatio="xMinYMax slice" aria-hidden="true" focusable="false">
+          <rect x="0" y="280" width="1440" height="40" fill="#070503"></rect>
+          <rect x="0" y="120" width="280" height="200" fill="#090705"></rect>
+          <g stroke="#1a140d" stroke-width="3">
+            <path d="M40 120 V320 M90 120 V320 M140 120 V320 M190 120 V320 M240 120 V320"></path>
+            <path d="M0 160 H280 M0 200 H280 M0 240 H280 M0 280 H280"></path>
+            <path d="M40 160 L90 200 M140 160 L190 200 M90 240 L140 280 M190 240 L240 280" stroke-width="2"></path>
+          </g>
+          <path fill="#070503" d="M1180 320 V150 H1290 V110 H1440 V320 Z"></path>
+          <g stroke="#1a140d" stroke-width="2">
+            <path d="M1320 110 V320 M1360 110 V320 M1400 110 V320"></path>
+            <path d="M1290 150 H1440 M1290 190 H1440 M1290 230 H1440 M1290 270 H1440"></path>
+          </g>
+        </svg>
+
+        <div class="hero-fog" aria-hidden="true"></div>
+
+        <!-- Copy -->
+        <div class="hero-dark-copy" data-parallax="0.1">
+          <span class="hero-dark-eyebrow">Строителен консултинг · Инвеститорски контрол · София</span>
+          <h1 class="hero-dark-title">Строителни проекти под пълен контрол.</h1>
+          <p class="hero-dark-sub">Инвеститорски контрол и управление на проекти — бюджет, срок, качество и документация в едни ръце, от концепция до въвеждане в експлоатация.</p>
+          <div class="hero-dark-actions">
+            <a href="#contact" class="btn btn-glow">
+              <span>Запитване</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#process" class="link-underline link-underline-light">Как работим</a>
+          </div>
+        </div>
+
+        <!-- Floating project control panel -->
+        <div class="hero-panel" data-parallax="0">
+          <div class="hero-panel-head">
+            <div class="hero-panel-live">
+              <span class="hero-panel-dot" aria-hidden="true"></span>
+              <span>Контролен панел на проекта · Седмица 34</span>
+            </div>
+            <span class="hero-panel-status">По график</span>
+          </div>
+          <div class="hero-panel-body">
+            <div class="hero-panel-info">
+              <div class="hero-panel-title">
+                <h3>MyCampus — студентско общежитие</h3>
+                <span>18 000 кв.м РЗП · София · Управление на проекта</span>
+              </div>
+              <div class="hero-panel-progress">
+                <div class="hero-panel-progress-row">
+                  <span>Напредък</span>
+                  <strong>72%</strong>
+                </div>
+                <div class="hero-panel-bar"><div class="hero-panel-bar-fill" style="width: 72%;"></div></div>
+              </div>
+              <div class="hero-panel-metrics">
+                <div class="hero-panel-metric">
+                  <span>Бюджет</span>
+                  <strong>96% усвоен · в рамка</strong>
+                </div>
+                <div class="hero-panel-metric">
+                  <span>Отчет №34</span>
+                  <strong>Изпратен на инвеститора</strong>
+                </div>
+              </div>
+            </div>
+            <div class="hero-panel-media">
+              <img src="images/completed/mycampus/4.jpg" alt="MyCampus — студентско общежитие, София">
+              <div class="hero-panel-caption">
+                <span>Обект от седмичния отчет</span>
+                <strong>Фасада · ниво 6</strong>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Right panel: auto-rotating project slideshow -->
-      <div class="hero-media">
-      <div class="hero-slideshow" id="heroSlideshow">
-        <div class="hero-slide active" data-slug="mycampus">
-          <img src="images/completed/mycampus/4.jpg" alt="MyCampus — Студентско общежитие" />
+      <!-- Trust strip -->
+      <div class="hero-trust">
+        <div class="container hero-trust-row">
+          <span class="hero-trust-label">Доверили ни се</span>
+          <div class="hero-trust-marks">
+            <span>Народно събрание</span>
+            <span>MyCampus</span>
+            <span>Aesthe Clinic</span>
+            <span>АТ Инженеринг 2000</span>
+            <span>Devin Properties</span>
+          </div>
         </div>
-        <div class="hero-slide" data-slug="klinika">
-          <img src="images/completed/klinika/4.JPEG" alt="Aesthe Clinic — Офис сграда и медицински център" />
-        </div>
-        <div class="hero-slide" data-slug="baucher">
-          <img src="images/completed/baucher/7.JPEG" alt="Ремонт на фасадна облицовка и покриви" />
-        </div>
-        <div class="hero-slide" data-slug="aleksov">
-          <img src="images/completed/aleksov/2.JPEG" alt="Жилищен комплекс — довършителни работи" />
-        </div>
-        <div class="hero-slide" data-slug="uchilishte">
-          <img src="images/completed/uchilishte/6.JPEG" alt="Преустройство и саниране на училище" />
-        </div>
-
-        <!-- Per-slide caption (updates with active slide) -->
-        <div class="hero-slide-caption" id="heroCaption">
-          <strong>MyCampus</strong>
-          Студентско общежитие  ·  18,000 кв.м РЗП  ·  София
-        </div>
-
-        <!-- Pagination dots -->
-        <div class="hero-dots" id="heroDots">
-          <button class="hero-dot active" data-index="0" aria-label="Слайд 1"></button>
-          <button class="hero-dot" data-index="1" aria-label="Слайд 2"></button>
-          <button class="hero-dot" data-index="2" aria-label="Слайд 3"></button>
-          <button class="hero-dot" data-index="3" aria-label="Слайд 4"></button>
-          <button class="hero-dot" data-index="4" aria-label="Слайд 5"></button>
-        </div>
-
-        <!-- Hover navigation arrows -->
-        <button class="hero-nav prev" id="heroPrev" aria-label="Предишен проект">
-          <i class="fas fa-arrow-left"></i>
-        </button>
-        <button class="hero-nav next" id="heroNext" aria-label="Следващ проект">
-          <i class="fas fa-arrow-right"></i>
-        </button>
-      </div>
       </div>
     </section>
 
@@ -501,81 +599,36 @@
     AOS.init({ duration: 1000, once: true, offset: 100 });
   </script>
 
-  <!-- Hero project slideshow -->
+
+  <!-- Dark hero: parallax layers + entrance handoff -->
   <script>
     (function() {
-      const slideshow = document.getElementById('heroSlideshow');
-      if (!slideshow) return;
-
-      const slides = slideshow.querySelectorAll('.hero-slide');
-      const dots = slideshow.querySelectorAll('.hero-dot');
-      const caption = document.getElementById('heroCaption');
-      const prevBtn = document.getElementById('heroPrev');
-      const nextBtn = document.getElementById('heroNext');
-
-      const slideMeta = {
-        mycampus:   { name: 'MyCampus',          meta: 'Студентско общежитие  ·  18,000 кв.м РЗП  ·  София' },
-        klinika:    { name: 'Aesthe Clinic',     meta: 'Офис &amp; медицински център  ·  3,425 кв.м РЗП  ·  София' },
-        baucher:    { name: 'Жилищна сграда',    meta: 'Ремонт на фасадна облицовка  ·  Premium residential  ·  София' },
-        aleksov:    { name: 'Жилищен комплекс',  meta: 'Довършителни работи  ·  3,965 кв.м РЗП  ·  София' },
-        uchilishte: { name: 'Училище',           meta: 'Преустройство и саниране  ·  Обществен обект  ·  София' }
-      };
-
-      let current = 0;
-      let timer = null;
-      const INTERVAL = 5500;
-
-      function show(index) {
-        current = (index + slides.length) % slides.length;
-        slides.forEach((s, i) => s.classList.toggle('active', i === current));
-        dots.forEach((d, i) => d.classList.toggle('active', i === current));
-        const slug = slides[current].dataset.slug;
-        const data = slideMeta[slug];
-        if (data && caption) {
-          caption.innerHTML = '<strong>' + data.name + '</strong>' + data.meta;
-        }
-      }
-
-      function next() { show(current + 1); }
-      function prev() { show(current - 1); }
-
-      function startTimer() {
-        stopTimer();
-        timer = setInterval(next, INTERVAL);
-      }
-      function stopTimer() {
-        if (timer) { clearInterval(timer); timer = null; }
-      }
-
-      prevBtn.addEventListener('click', () => { prev(); startTimer(); });
-      nextBtn.addEventListener('click', () => { next(); startTimer(); });
-      dots.forEach(dot => dot.addEventListener('click', () => {
-        show(parseInt(dot.dataset.index, 10));
-        startTimer();
-      }));
-
-      // Pause on hover, resume on leave
-      slideshow.addEventListener('mouseenter', stopTimer);
-      slideshow.addEventListener('mouseleave', startTimer);
-
-      // Keyboard nav when hero is in view
-      document.addEventListener('keydown', (e) => {
-        const rect = slideshow.getBoundingClientRect();
-        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-        if (e.key === 'ArrowLeft')  { prev(); startTimer(); }
-        if (e.key === 'ArrowRight') { next(); startTimer(); }
+      var stage = document.querySelector('.hero-stage');
+      if (!stage) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var layers = Array.prototype.slice.call(stage.querySelectorAll('[data-parallax]'));
+      // Entrance keyframes own `transform` while they run; hand it back to the parallax afterwards.
+      layers.forEach(function(el) {
+        el.addEventListener('animationend', function() { el.style.animation = 'none'; });
       });
-
-      // Preload remaining images for smooth transitions
-      slides.forEach(s => {
-        const img = s.querySelector('img');
-        if (img) {
-          const preload = new Image();
-          preload.src = img.src;
-        }
-      });
-
-      startTimer();
+      if (reduce) return;
+      var ticking = false;
+      function update() {
+        var y = window.pageYOffset || document.documentElement.scrollTop;
+        var limit = stage.offsetHeight;
+        if (y > limit) y = limit;
+        var compact = window.innerWidth <= 760; // copy and panel sit in normal flow there
+        layers.forEach(function(el) {
+          var f = parseFloat(el.getAttribute('data-parallax')) || 0;
+          if (compact && !el.classList.contains('hero-layer')) { el.style.transform = ''; return; }
+          el.style.transform = 'translate3d(0,' + (y * f).toFixed(1) + 'px,0)';
+        });
+        ticking = false;
+      }
+      window.addEventListener('scroll', function() {
+        if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
+      }, { passive: true });
+      update();
     })();
   </script>
 
