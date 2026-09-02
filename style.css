@@ -2554,8 +2554,13 @@ h1, h2, h3, h4 { font-weight: 400; }
 .link-underline:hover { color: var(--accent); border-color: var(--accent); }
 .link-underline i { font-size: 0.72rem; }
 
-/* — Navbar wordmark — */
-.brand-word { display: flex; align-items: baseline; gap: 0.65rem; text-decoration: none; }
+/* — Navbar wordmark + monochrome mark — */
+.brand-word { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+.brand-mark { display: block; height: 28px; width: auto; flex-shrink: 0; }
+.brand-text { display: flex; align-items: baseline; gap: 0.65rem; }
+.footer-word { display: inline-flex; align-items: center; gap: 0.6rem; }
+.footer-mark { display: block; height: 22px; width: auto; }
+@media (max-width: 640px) { .brand-mark { height: 24px; } }
 .brand-name {
   font-family: var(--font-display);
   font-size: 1.15rem;
