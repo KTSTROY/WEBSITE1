@@ -103,83 +103,15 @@
       <div class="hero-stage">
         <div class="hero-glow" aria-hidden="true"></div>
 
-        <!-- Layer 1 — far skyline in haze -->
-        <svg class="hero-layer hero-layer-far" data-parallax="0.3" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
-          <defs>
-            <linearGradient id="heroFar" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#6b5a43"></stop>
-              <stop offset="1" stop-color="#2a2218"></stop>
-            </linearGradient>
-          </defs>
-          <path fill="url(#heroFar)" d="M0 420 V300 H60 V250 H110 V300 H150 V210 H200 V180 H230 V210 H270 V280 H330 V230 H380 V300 H420 V160 H470 V140 H500 V160 H560 V260 H620 V220 H680 V300 H720 V190 H770 V170 H800 V190 H860 V280 H920 V240 H980 V300 H1020 V200 H1070 V150 H1110 V200 H1160 V270 H1220 V230 H1280 V300 H1330 V250 H1380 V300 H1440 V420 Z"></path>
-        </svg>
-
-        <!-- Layer 2 — buildings under construction and tower cranes -->
-        <svg class="hero-layer hero-layer-mid" data-parallax="0.2" viewBox="0 0 1440 460" preserveAspectRatio="xMinYMax slice" aria-hidden="true" focusable="false">
-          <g fill="#17130e">
-            <rect x="120" y="190" width="180" height="270"></rect>
-            <rect x="1000" y="240" width="180" height="220"></rect>
-            <rect x="560" y="120" width="260" height="340"></rect>
-          </g>
-          <g stroke="rgba(241,236,225,0.06)" stroke-width="1">
-            <path d="M150 190 V460 M180 190 V460 M210 190 V460 M240 190 V460 M270 190 V460"></path>
-            <path d="M120 220 H300 M120 250 H300 M120 280 H300 M120 310 H300 M120 340 H300 M120 370 H300 M120 400 H300 M120 430 H300"></path>
-            <path d="M1030 240 V460 M1060 240 V460 M1090 240 V460 M1120 240 V460 M1150 240 V460"></path>
-            <path d="M1000 270 H1180 M1000 300 H1180 M1000 330 H1180 M1000 360 H1180 M1000 390 H1180 M1000 420 H1180"></path>
-          </g>
-          <g fill="#241e16">
-            <rect x="560" y="120" width="260" height="6"></rect>
-            <rect x="560" y="154" width="260" height="6"></rect>
-            <rect x="560" y="188" width="260" height="6"></rect>
-            <rect x="560" y="222" width="260" height="6"></rect>
-            <rect x="560" y="256" width="260" height="6"></rect>
-            <rect x="560" y="290" width="260" height="6"></rect>
-          </g>
-          <g stroke="#241e16" stroke-width="4">
-            <path d="M580 120 V300 M640 120 V300 M700 120 V300 M760 120 V300 M812 120 V300"></path>
-          </g>
-          <g stroke="#1c1711" stroke-linecap="round" fill="none">
-            <path d="M420 460 V70" stroke-width="10"></path>
-            <path d="M420 70 H740" stroke-width="6"></path>
-            <path d="M420 70 H330" stroke-width="6"></path>
-            <path d="M420 44 L600 70 M420 44 L340 70 M420 44 V70" stroke-width="3"></path>
-            <path d="M640 70 V190" stroke-width="2"></path>
-            <path d="M400 150 L440 190 M440 150 L400 190 M400 230 L440 270 M440 230 L400 270 M400 310 L440 350 M440 310 L400 350 M400 390 L440 430 M440 390 L400 430" stroke-width="2"></path>
-          </g>
-          <g fill="#1c1711">
-            <rect x="405" y="72" width="34" height="22"></rect>
-            <rect x="632" y="188" width="16" height="10"></rect>
-            <rect x="330" y="74" width="40" height="16"></rect>
-          </g>
-          <g stroke="#17130e" stroke-linecap="round" fill="none">
-            <path d="M1250 460 V120" stroke-width="9"></path>
-            <path d="M1250 120 H980" stroke-width="5"></path>
-            <path d="M1250 120 H1340" stroke-width="5"></path>
-            <path d="M1250 96 L1080 120 M1250 96 L1330 120 M1250 96 V120" stroke-width="3"></path>
-            <path d="M1060 120 V220" stroke-width="2"></path>
-          </g>
-          <g fill="#17130e">
-            <rect x="1233" y="122" width="34" height="20"></rect>
-            <rect x="1300" y="124" width="38" height="14"></rect>
-            <rect x="1052" y="218" width="16" height="10"></rect>
-          </g>
-        </svg>
-
-        <!-- Layer 3 — scaffolding in the foreground -->
-        <svg class="hero-layer hero-layer-near" data-parallax="0.1" viewBox="0 0 1440 320" preserveAspectRatio="xMinYMax slice" aria-hidden="true" focusable="false">
-          <rect x="0" y="280" width="1440" height="40" fill="#070503"></rect>
-          <rect x="0" y="120" width="280" height="200" fill="#090705"></rect>
-          <g stroke="#1a140d" stroke-width="3">
-            <path d="M40 120 V320 M90 120 V320 M140 120 V320 M190 120 V320 M240 120 V320"></path>
-            <path d="M0 160 H280 M0 200 H280 M0 240 H280 M0 280 H280"></path>
-            <path d="M40 160 L90 200 M140 160 L190 200 M90 240 L140 280 M190 240 L240 280" stroke-width="2"></path>
-          </g>
-          <path fill="#070503" d="M1180 320 V150 H1290 V110 H1440 V320 Z"></path>
-          <g stroke="#1a140d" stroke-width="2">
-            <path d="M1320 110 V320 M1360 110 V320 M1400 110 V320"></path>
-            <path d="M1290 150 H1440 M1290 190 H1440 M1290 230 H1440 M1290 270 H1440"></path>
-          </g>
-        </svg>
+        <!-- Full-bleed project photo (MyCampus), graded dark and warm; wrapper carries the parallax -->
+        <div class="hero-layer hero-photo-wrap" data-parallax="0.12">
+          <picture>
+            <source media="(max-width: 760px)" srcset="images/hero/mycampus-hero-mobile.jpg">
+            <img class="hero-photo" src="images/hero/mycampus-hero.jpg" alt="" fetchpriority="high">
+          </picture>
+        </div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-tint" aria-hidden="true"></div>
 
         <div class="hero-fog" aria-hidden="true"></div>
 
@@ -231,7 +163,7 @@
               </div>
             </div>
             <div class="hero-panel-media">
-              <img src="images/completed/mycampus/4.jpg" alt="MyCampus — студентско общежитие, София">
+              <img src="images/completed/mycampus/5.jpg" alt="MyCampus — студентско общежитие, София">
               <div class="hero-panel-caption">
                 <span>Обект от седмичния отчет</span>
                 <strong>Фасада · ниво 6</strong>

@@ -3000,6 +3000,37 @@ h1, h2, h3, h4 { font-weight: 400; }
 .hero-layer-far { height: 420px; opacity: 0.85; }
 .hero-layer-mid { height: 460px; }
 .hero-layer-near { height: 320px; }
+
+/* Full-bleed photo variant: the wrapper overshoots the stage so the parallax never reveals an edge */
+.hero-photo-wrap { top: -14%; bottom: -14%; height: auto; z-index: 0; }
+.hero-photo-wrap picture { display: block; width: 100%; height: 100%; }
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  filter: brightness(0.42) saturate(0.55) contrast(1.12);
+  transform: scale(1.06);
+  animation: heroPhoto 2.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12, 10, 8, 0.85) 0%, rgba(12, 10, 8, 0.35) 38%, rgba(12, 10, 8, 0.25) 60%, rgba(12, 10, 8, 0.92) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-tint {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(200, 154, 91, 0.16) 0%, rgba(12, 10, 8, 0) 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-stage > .hero-glow { z-index: 1; }
+.hero-stage > .hero-fog { z-index: 2; }
+@keyframes heroPhoto { from { opacity: 0; transform: scale(1.14); } to { opacity: 1; transform: scale(1.06); } }
 .hero-fog {
   position: absolute;
   left: 0;
@@ -3158,7 +3189,7 @@ h1, h2, h3, h4 { font-weight: 400; }
 .hero-layer-mid { animation: heroRise 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s both; }
 .hero-layer-near { animation: heroRise 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s both; }
 @media (prefers-reduced-motion: reduce) {
-  .hero-dark-copy, .hero-panel, .hero-layer, .hero-panel-bar-fill, .hero-panel-dot { animation: none; }
+  .hero-dark-copy, .hero-panel, .hero-layer, .hero-photo, .hero-panel-bar-fill, .hero-panel-dot { animation: none; }
 }
 
 /* Dark hero responsive */
