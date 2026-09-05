@@ -11,7 +11,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260905">
 
   <!-- Refresh = go to top. Clears #hash on reload. -->
   <script>
@@ -878,7 +878,7 @@
     });
 
     // Fetch and display project
-    fetch(jsonFile)
+    fetch(jsonFile + '?v=20260905')
       .then(response => {
         if (!response.ok) throw new Error('Network response was not ok');
         return response.json();

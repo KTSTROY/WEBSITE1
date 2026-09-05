@@ -1,11 +1,11 @@
-const CACHE_NAME = 'ktstroy-cache-v9';
+const CACHE_NAME = 'ktstroy-cache-v10';
 const urlsToCache = [
   './',
   'index.html',
   'completed.html',
   'in-progress.html',
   'detail.html',
-  'style.css',
+  'style.css?v=20260905',
   'manifest.json',
   'images/logo-mark.svg',
   'favicon.svg',
@@ -15,8 +15,8 @@ const urlsToCache = [
   'images/partners/knauf.svg',
   'images/partners/baumit.svg',
   'images/partners/terazid.png',
-  'data/projects-completed.json',
-  'data/projects-in-progress.json',
+  'data/projects-completed.json?v=20260905',
+  'data/projects-in-progress.json?v=20260905',
 ];
 
 self.addEventListener('install', event => {
