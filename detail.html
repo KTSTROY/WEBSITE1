@@ -723,7 +723,7 @@
       <h3>Контакти</h3>
       <p><i class="fas fa-phone"></i><a href="tel:+359883481292">+359 883 481 292</a></p>
       <p><i class="fas fa-envelope"></i><a href="mailto:y.aleksiev@ktstroyconsult.com">y.aleksiev@ktstroyconsult.com</a></p>
-      <p><i class="fas fa-map-marker-alt"></i><a href="https://www.google.com/maps?q=42.69751,23.32415" target="_blank" rel="noopener">ул. Йордан Трифонов 8А, София</a></p>
+      <p><i class="fas fa-map-marker-alt"></i><a href="https://www.google.com/maps/search/?api=1&query=%D0%A1%D1%82%D1%83%D0%B4%D0%B5%D0%BD%D1%82%D1%81%D0%BA%D0%B8%20%D0%B3%D1%80%D0%B0%D0%B4%2C%20%D0%B1%D0%BB.%206%D0%90%2C%20%D0%A1%D0%BE%D1%84%D0%B8%D1%8F" target="_blank" rel="noopener">Студентски град, бл. 6А, вх. Г, ет. 4, ап. 12, София</a></p>
       <div class="footer-social">
         <span class="social-disabled" aria-label="Facebook страница предстои" title="Facebook страница предстои"><i class="fab fa-facebook-f"></i></span>
       </div>
@@ -883,6 +883,7 @@
         if (!response.ok) throw new Error('Network response was not ok');
         return response.json();
       })
+      .then(projects => projects.filter(p => !p.hidden)) // проекти с "hidden": true в JSON не се показват никъде
       .then(projects => {
         const project = projects.find(p => p.slug === slug);
 

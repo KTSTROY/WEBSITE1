@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ktstroy-cache-v7';
+const CACHE_NAME = 'ktstroy-cache-v9';
 const urlsToCache = [
   './',
   'index.html',
@@ -9,7 +9,7 @@ const urlsToCache = [
   'manifest.json',
   'images/logo-mark.svg',
   'favicon.svg',
-  'images/about-quality.jpg',
+  'images/about-projects.jpg',
   'images/partners/maxxmart-cropped.jpg',
   'images/partners/angro.png',
   'images/partners/knauf.svg',
